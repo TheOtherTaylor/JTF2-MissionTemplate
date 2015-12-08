@@ -28,7 +28,7 @@ for "_i" from 1 to 14 do {player addItemToBackpack "ACE_bloodIV_500";};
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";
-player addWeapon "rhs_weap_m4a1_carryhandle";
+player addWeapon "rhs_weap_m16a4_carryhandle";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ACOG";
 
@@ -36,6 +36,7 @@ comment "Add items";
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
+player linkItem "ItemGPS";
 player linkItem "tf_anprc152_1";
 player linkItem "NVGoggles_INDEP";
 [player,"CFB_Medic"] call bis_fnc_setUnitInsignia;
