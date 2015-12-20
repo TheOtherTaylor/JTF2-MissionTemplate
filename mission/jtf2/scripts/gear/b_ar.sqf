@@ -19,14 +19,14 @@ player addItemToUniform "ACE_IR_Strobe_Item";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};
 for "_i" from 1 to 3 do {player addItemToVest "HandGrenade";};
-player addBackpack "CFB_TW_Backpack_Assault";
-for "_i" from 1 to 2 do {player addItemToBackpack "rhs_200rnd_"556x45_M_SAW";};
+for "_i" from 1 to 2 do {player addItemToVest "rhs_200rnd_"556x45_M_SAW";};
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";
 player addWeapon "rhs_weap_m249_pip_L";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
+player addItemToVest "rhs_200rnd_"556x45_M_SAW";}; //must do player or you are left with half-empty vest
 
 
 comment "Add items";

@@ -27,7 +27,7 @@ player addItemToBackpack "Laserbatteries";
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";
-player addWeapon "rhs_weap_m16a4_carryhandle_m320";
+player addWeapon "rhs_weap_m4_m320";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ACOG";
 player addWeapon "Laserdesignator_03";

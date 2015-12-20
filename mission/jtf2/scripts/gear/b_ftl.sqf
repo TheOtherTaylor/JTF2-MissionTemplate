@@ -28,7 +28,7 @@ player addItemToBackpack "rhs_M136_hp_mag"
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";
-player addWeapon "rhs_weap_m16a4_carryhandle_m203";
+player addWeapon "rhs_weap_m4_m320";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ACOG";
 player addWeapon "Rangefinder";

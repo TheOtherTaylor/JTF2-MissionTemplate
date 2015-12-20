@@ -21,7 +21,7 @@ for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};
 for "_i" from 1 to 2 do {player addItemToVest "HandGrenade";};
 player addItemToVest "SmokeShellGreen";
 for "_i" from 1 to 11 do {player addItemToVest "rhs_mag_30Rnd_556x45_Mk318_Stanag";};
-player addBackpack "CFB_TW_Backpack_Kitbag
+player addBackpack "CFB_TW_Backpack_Kitbag;
 for "_i" from 1 to 3 do {player addItemToBackpack "RPG32_F";};
 for "_i" from 1 to 2 do {player addItemToBackpack "RPG32_HE_F";};
 player addHeadgear "CFB_TW_Helmet";
