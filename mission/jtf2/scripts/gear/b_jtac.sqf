@@ -12,7 +12,6 @@ comment "Add containers";
 player forceAddUniform "CFB_TW_Rolled_Uniform";
 for "_i" from 1 to 10 do {player addItemToUniform "ACE_fieldDressing";};
 for "_i" from 1 to 4 do {player addItemToUniform "ACE_morphine";};
-player addItemToUniform "ACE_epinephrine";
 player addItemToUniform "ACE_EarPlugs";
 for "_i" from 1 to 2 do {player addItemToUniform "SmokeShell";};
 player addItemToUniform "HandGrenade";
@@ -23,6 +22,7 @@ for "_i" from 1 to 3 do {player addItemToVest "rhs_mag_m713_Red";};
 for "_i" from 1 to 2 do {player addItemToVest "rhs_mag_m714_White";};
 for "_i" from 1 to 2 do {player addItemToVest "rhs_mag_m715_Green";};
 player addBackpack "tf_rt1523g_bwmod";
+player addItemToBackpack "ACE_epinephrine";
 player addItemToBackpack "Laserbatteries";
 player addHeadgear "CFB_TW_Helmet";
 

@@ -27,7 +27,7 @@ player addHeadgear "CFB_TW_Helmet";
 player addGoggles "rhs_googles_clear";
 
 comment "Add weapons";
-player addWeapon "rhs_weap_m4_m203";
+player addWeapon "rhs_weap_m4_m320";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ACOG";
 
@@ -35,5 +35,6 @@ comment "Add items";
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
+player linkItem "ItemGPS";
 player linkItem "tf_anprc152_1";
 player linkItem "NVGoggles_INDEP";
