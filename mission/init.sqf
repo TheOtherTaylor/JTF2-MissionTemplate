@@ -32,11 +32,38 @@ if (isServer) then
 };
 
 // Everyone is enemies with everyone else.
- west setFriend [resistance, 0];
- resistance setFriend [west, 0];
- east setFriend [resistance, 0];
- resistance setFriend [east, 0];
-
+ switch ("jtf2_param_independent_friendly_setting" call BIS_fnc_getParamValue) do
+ {
+    case 0: 
+    {
+        west setFriend [resistance, 1];
+        resistance setFriend [west, 1];
+        east setFriend [resistance, 1];
+        resistance setFriend [east, 1];
+    };    
+    case 1: 
+    {
+        west setFriend [resistance, 0];
+        resistance setFriend [west, 0];
+        east setFriend [resistance, 1];
+        resistance setFriend [east, 1];
+    };   
+    case 2: 
+    {
+        west setFriend [resistance, 1];
+        resistance setFriend [west, 1];
+        east setFriend [resistance, 0];
+        resistance setFriend [east, 0];
+    };   
+    case 3: 
+    {
+        west setFriend [resistance, 0];
+        resistance setFriend [west, 0];
+        east setFriend [resistance, 0];
+        resistance setFriend [east, 0];
+    };
+};
+ 
  switch ("jtf2_param_allow_grass_changes" call BIS_fnc_getParamValue) do
  {
 	case 0: { tawvd_disableGrassChanges = true; };

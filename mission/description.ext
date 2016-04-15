@@ -14,13 +14,12 @@ onLoadMission = "Mission template for running JTF2 ops with a GM";
 author = "Anton Struyk";
 loadScreen = "logo.paa";
 
-respawn = "BASE";
-respawndelay = 5;
+respawn = 3;
+respawndelay = 1;
 respawnDialog = 0;
 respawnOnStart = 1;
 joinUnassigned = 1;
-respawnTemplates[] = { "MenuPosition" };
-respawnTemplatesCiv[] = { "Spectator" };
+respawnTemplates[] = {"MenuPosition"};
 
 class Params
 {
@@ -39,7 +38,7 @@ class Params
 		texts[] = { "JTF2 Custom Loadouts", "Default ARMA Loadouts" };
 		default = 0;
 	};
-
+    
 	class jtf2_param_allow_grass_changes
 	{
 		title = "Allow players to change grass view settings";
@@ -64,6 +63,22 @@ class Params
 		default = -1;
 	};
 	
+    class jtf2_param_faction_options_spacer
+	{
+		title = "--------------------- FACTION OPTIONS ----------------------------";
+		values[] = { 0, 1 };
+		texts[] = { " ", " " };
+		default = 0;
+	};
+    
+    class jtf2_param_independent_friendly_setting
+	{
+		title = "Independent Allegiance";
+		values[] = { 0, 1, 2, 3 };
+		texts[] = { "Friendly to All", "Friendly to Opfor", "Friendly to Blufor", "Friendly to None" };
+		default = 3;
+	};
+    
 	class jtf2_param_ace_map_spacer
 	{
 		title = "--------------------- ACE MAP OPTIONS ----------------------------";
@@ -75,6 +90,14 @@ class Params
 	class jtf2_param_ace_show_squad_map_markers
 	{
 		title = "Show friendly squad markers on map?";
+		values[] = { 0, 1 };
+		texts[] = { "No", "Yes" };
+		default = 0;
+	};
+    
+    class jtf2_param_ace_use_spectator
+	{
+		title = "Allow spectator view on death";
 		values[] = { 0, 1 };
 		texts[] = { "No", "Yes" };
 		default = 1;
@@ -95,6 +118,7 @@ class Params
 		texts[] = { "Simple", "Advanced" };
 		default = 0;
 	};
+    
 };
 
 #include "taw_vd\dialog.hpp"

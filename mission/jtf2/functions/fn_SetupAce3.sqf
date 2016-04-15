@@ -22,8 +22,8 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
 	["ace_medical_allowLitterCreation", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled
 	["ace_medical_litterCleanUpDelay", 120] call ace_common_fnc_setParameter; // Time in seconds. 0 = Never cleanup. Default=120
 	["ace_medical_enableScreams", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled
-	["ace_medical_playerDamageThreshold", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1 (Edited to 1.2 on 2015/08/12 to deal with basic medical bug)
-	["ace_medical_AIDamageThreshold", 0.8] call ace_common_fnc_setParameter; // Scalar. Default = 1
+	["ace_medical_playerDamageThreshold", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1
+	["ace_medical_AIDamageThreshold", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1
 	["ace_medical_enableUnconsciousnessAI", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = 50/50, 2 = Enabled
 	["ace_medical_preventInstaDeath", 0] call ace_common_fnc_setParameter; // 0* = Disabled, 1 = Enabled
 	["ace_medical_bleedingCoefficient", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1

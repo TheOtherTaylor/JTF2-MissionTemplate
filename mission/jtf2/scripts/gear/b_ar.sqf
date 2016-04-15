@@ -19,7 +19,7 @@ player addItemToUniform "ACE_IR_Strobe_Item";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};
 for "_i" from 1 to 3 do {player addItemToVest "HandGrenade";};
-for "_i" from 1 to 2 do {player addItemToVest "rhs_200rnd_"556x45_M_SAW";};
+for "_i" from 1 to 2 do {player addItemToVest "rhs_200rnd_556x45_M_SAW";};
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";

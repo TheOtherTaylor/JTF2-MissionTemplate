@@ -32,7 +32,7 @@ player addWeapon "rhs_weap_m4_m320";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ACOG";
 player addWeapon "Rangefinder";
-player addWeapon "rhs_Weap_M136_ hp"
+player addWeapon "rhs_Weap_M136_ hp";
  
 comment "Add items";
 player linkItem "ItemMap";
