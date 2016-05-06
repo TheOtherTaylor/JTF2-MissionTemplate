@@ -20,6 +20,7 @@ player addItemToUniform "ACE_RangeCard";
 player addItemToUniform "ACE_Kestrel4500";
 player addItemToUniform "ACE_ATragMX";
 player addItemToUniform "ACE_microDAGR";
+player addItemToUniform "ACE_MapTools";
 for "_i" from 1 to 2 do {player addItemToUniform "9Rnd_45ACP_Mag";};
 player addVest "CFB_TW_Vest_PlateCarrier1";
 for "_i" from 1 to 8 do {player addItemToVest "rhsusf_20Rnd_762x51_m993_Mag";};

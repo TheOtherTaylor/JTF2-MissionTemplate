@@ -19,6 +19,7 @@ for "_i" from 1 to 2 do {player addItemToUniform "SmokeShell";};
 player addItemToUniform "SmokeShellGreen";
 player addItemToUniform "HandGrenade";
 player addItemToUniform "ACE_IR_Strobe_Item";
+player addItemToUniform "ACE_MapTools";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 11 do {player addItemToVest "rhsusf_20Rnd_762x51_m118_special_Mag";};
 player addHeadgear "CFB_TW_Helmet";

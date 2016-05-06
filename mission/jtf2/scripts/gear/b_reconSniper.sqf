@@ -18,6 +18,7 @@ for "_i" from 1 to 4 do {player addItemToUniform "ACE_CableTie";};
 player addItemToUniform "ACE_IR_Strobe_Item";
 player addItemToUniform "ACE_RangeCard";
 player addItemToUniform "ACE_Kestrel4500";
+player addItemToUniform "ACE_MapTools";
 for "_i" from 1 to 2 do {player addItemToUniform "9Rnd_45ACP_Mag";};
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 9 do {player addItemToVest "rhsusf_B_300WINMAG";};

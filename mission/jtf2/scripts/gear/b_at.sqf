@@ -16,6 +16,7 @@ player addItemToUniform "ACE_IR_Strobe_Item";
 player addItemToUniform "ACE_EarPlugs";
 player addItemToUniform "ACE_epinephrine";
 player addItemToUniform "rhs_mag_30Rnd_556x45_Mk318_Stanag";
+player addItemToUniform "ACE_MapTools";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};
 player addItemToVest "HandGrenade";

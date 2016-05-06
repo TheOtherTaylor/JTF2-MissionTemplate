@@ -15,6 +15,7 @@ for "_i" from 1 to 4 do {player addItemToUniform "ACE_morphine";};
 player addItemToUniform "ACE_epinephrine";
 for "_i" from 1 to 2 do {player addItemToUniform "ACE_CableTie";};
 player addItemToUniform "ACE_EarPlugs";
+player addItemToUniform "ACE_MapTools";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 player addItemToVest "ACE_IR_Strobe_Item";
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};

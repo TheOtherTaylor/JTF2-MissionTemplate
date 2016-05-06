@@ -17,6 +17,7 @@ player addItemToUniform "ACE_epinephrine";
 player addItemToUniform "ACE_DefusalKit";
 player addItemToUniform "ACE_Clacker";
 player addItemToUniform "ACE_IR_Strobe_Item";
+player addItemToUniform "ACE_MapTools";
 player addVest "V_PlateCarrierIAGL_oli";
 for "_i" from 1 to 9 do {player addItemToVest "rhs_mag_30Rnd_556x45_Mk318_Stanag";};
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};

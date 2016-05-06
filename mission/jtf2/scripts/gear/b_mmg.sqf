@@ -17,6 +17,7 @@ player addItemToUniform "ACE_EarPlugs";
 player addItemToUniform "HandGrenade";
 player addItemToUniform "SmokeShellGreen";
 player addItemToUniform "ACE_IR_Strobe_Item";
+player addItemToUniform "ACE_MapTools";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 2 do {player addItemToVest "rhsusf_100Rnd_762x51";};
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};

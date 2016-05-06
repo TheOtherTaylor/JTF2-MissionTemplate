@@ -11,7 +11,7 @@ enableDebugConsole = 1;  // Admins and hosts
 
 onLoadName = "JTF2 Dynamic Ops";
 onLoadMission = "Mission template for running JTF2 ops with a GM";
-author = "Anton Struyk";
+author = "Anton Struyk and TheOtherTaylor";
 loadScreen = "logo.paa";
 
 respawn = 3;
@@ -106,7 +106,6 @@ class Params
 };
 
 #include "taw_vd\dialog.hpp"
-#include "spectator\spectating.hpp"
 
 class CfgFunctions
 {
