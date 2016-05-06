@@ -55,14 +55,6 @@ class Params
 		default = 0;
 	};
 
-	class jtf2_param_respawn_tickets
-	{
-		title = "Number of Respawns";
-		values[] = { -1, 0, 1, 5, 10, 15, 20 };
-		texts[] = { "Unlimited", "No Respawns", "1 Respawn", "5 Respawns", "10 Respawns", "15 Respawns", "20 Respawns" };
-		default = -1;
-	};
-	
     class jtf2_param_faction_options_spacer
 	{
 		title = "--------------------- FACTION OPTIONS ----------------------------";
@@ -79,9 +71,9 @@ class Params
 		default = 3;
 	};
     
-	class jtf2_param_ace_map_spacer
+	class jtf2_param_ace_options_spacer
 	{
-		title = "--------------------- ACE MAP OPTIONS ----------------------------";
+		title = "--------------------- ACE OPTIONS ----------------------------";
 		values[] = { 0, 1 };
 		texts[] = { " ", " " };
 		default = 0;
@@ -97,23 +89,15 @@ class Params
     
     class jtf2_param_ace_use_spectator
 	{
-		title = "Allow spectator view on death";
+        title = "Allow spectator view on death (BETA)";
 		values[] = { 0, 1 };
 		texts[] = { "No", "Yes" };
-		default = 1;
-	};
-	
-	class jtf2_param_ace_medical_spacer
-	{
-		title = "--------------------- ACE MEDICAL OPTIONS ----------------------------";
-		values[] = { 0, 1 };
-		texts[] = { " ", " " };
 		default = 0;
 	};
 
 	class jtf2_param_ace_medical_level
 	{
-		title = "Simulation Level";
+		title = "Medical Simulation Level";
 		values[] = { 0, 1 };
 		texts[] = { "Simple", "Advanced" };
 		default = 0;

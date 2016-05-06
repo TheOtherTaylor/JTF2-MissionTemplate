@@ -3,7 +3,7 @@
 MCC_path = ""; // Keeps specatator script from freaking out.
 // TODO enable when this is complete.
 // [] execVM "Ares_addClassRestrictedArsenalModule.sqf";
-[] execVM "Ares_addRespawnTicketModules.sqf";
+// [] execVM "Ares_addRespawnTicketModules.sqf";
 
 enableSaving [false, false]; //Don't allow saving
 enableSentences false; // Keep the commander units from saying things automatically

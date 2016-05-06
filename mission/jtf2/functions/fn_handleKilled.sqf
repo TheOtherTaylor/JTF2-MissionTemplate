@@ -3,15 +3,15 @@ if (not local _killedUnit) exitWith {};
 
 player setVariable ["JTF2_Gear_Assigned", false];
 
-_defaultTickets = ("jtf2_param_respawn_tickets" call BIS_fnc_getParamValue);
-if (_defaultTickets >= 0) then
+_allowSpectator = ("jtf2_param_ace_use_spectator" call BIS_fnc_getParamValue);
+if (_allowSpectator > 0) then
 {
-	// We respawn to start, which apparently counts as a player kill. Use _defaultTickets +1 since the 0th ticket doesn't count.
-	_variableName = "JTF2_Mission_Respawns_Remaining_" + (getPlayerUID player);
-	_previousTickets = missionNamespace getVariable [_variableName, _defaultTickets + 1];
-	if (_previousTickets >= 0) then
-	{
-		missionNamespace setVariable [_variableName, _previousTickets - 1];
-		diag_log format["Tickets: %1 - variableName: %2", _previousTickets - 1, _variableName];
-	};
+	// Create variable to track alternating spectator/respawn
+	_variableName = "JTF2_Spectator_Status_" + (getPlayerUID player);
+	//If player spectator status does not exist, create player at spectator = false
+    private _var = missionNamespace getVariable _variableName;
+    if (isNil "_var") then
+    {
+        missionNamespace setVariable [_variableName, 0]; 
+    };
 };
