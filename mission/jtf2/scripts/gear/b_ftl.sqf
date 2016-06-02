@@ -25,7 +25,6 @@ for "_i" from 1 to 3 do {player addItemToVest "rhs_mag_m713_Red";};
 for "_i" from 1 to 2 do {player addItemToVest "rhs_mag_m714_White";};
 for "_i" from 1 to 2 do {player addItemToVest "rhs_mag_m715_Green";};
 player addBackpack "tf_rt1523g_bwmod";
-player addItemToBackpack "rhs_M136_hp_mag"
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";
@@ -33,12 +32,11 @@ player addWeapon "rhs_weap_m4_m320";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ACOG";
 player addWeapon "Rangefinder";
-player addWeapon "rhs_Weap_M136_ hp";
  
 comment "Add items";
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player linkItem "tf_anprc152_1";
+player linkItem "tf_anprc152";
 player linkItem "ItemGPS";
 player linkItem "NVGoggles_INDEP";

@@ -21,8 +21,8 @@ player addItemToUniform "ACE_MapTools";
 player addVest "CFB_TW_Vest_PlateCarrier2";
 for "_i" from 1 to 2 do {player addItemToVest "rhsusf_100Rnd_762x51";};
 for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};
-player forceAddBackpack "CFB_TW_Assault"
-for "_i" from 1 to 2 do {player addItemToBackpack "rhsusg_100rnd_762x51";};
+player addBackpack "CFB_TW_Backpack_Assault";
+for "_i" from 1 to 2 do {player addItemToBackpack "rhsusf_100rnd_762x51";};
 player addHeadgear "CFB_TW_Helmet";
 
 comment "Add weapons";

@@ -38,5 +38,5 @@ player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
 player linkItem "ItemGPS";
-player linkItem "tf_anprc152_1";
+player linkItem "tf_anprc152";
 player linkItem "NVGoggles_INDEP";

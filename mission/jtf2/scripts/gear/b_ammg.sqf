@@ -9,7 +9,7 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player forceAddUniform "CFB_TW_Tshirt_Uniform";
+player forceAddUniform "CFB_TW_Uniform";
 for "_i" from 1 to 10 do {player addItemToUniform "ACE_fieldDressing";};
 for "_i" from 1 to 4 do {player addItemToUniform "ACE_morphine";};
 player addItemToUniform "ACE_epinephrine";
@@ -35,5 +35,5 @@ player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
 player linkItem "ItemGPS";
-player linkItem "tf_anprc152_1";
+player linkItem "tf_anprc152";
 player linkItem "NVGoggles_INDEP";

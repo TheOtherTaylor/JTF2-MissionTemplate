@@ -32,6 +32,6 @@ comment "Add items";
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ACE_Altimeter";
-player linkItem "tf_anprc152_3";
+player linkItem "tf_anprc152";
 player linkItem "ItemGPS";
 player linkItem "NVGoggles_INDEP";

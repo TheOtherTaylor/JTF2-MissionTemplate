@@ -27,7 +27,7 @@ comment "Add weapons";
 player addWeapon "rhs_weap_m249_pip_L";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
 player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
-player addItemToVest "rhs_200rnd_"556x45_M_SAW";}; //must do player or you are left with half-empty vest
+player addItemToVest "rhs_200rnd_556x45_M_SAW";}; //must do player or you are left with half-empty vest
 
 
 comment "Add items";
@@ -35,5 +35,5 @@ player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
 player linkItem "ItemGPS";
-player linkItem "tf_anprc152_1";
+player linkItem "tf_anprc152";
 player linkItem "NVGoggles_INDEP";
