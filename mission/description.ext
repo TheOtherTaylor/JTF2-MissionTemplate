@@ -99,8 +99,8 @@ class Params
 	{
 		title = "Medical Simulation Level";
 		values[] = { 0, 1 };
-		texts[] = { "Simple", "Advanced" };
-		default = 0;
+		texts[] = { "Basic", "Advanced" };
+		default = 1;
 	};
     
 };

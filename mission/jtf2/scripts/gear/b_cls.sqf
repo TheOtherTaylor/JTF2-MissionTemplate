@@ -35,23 +35,12 @@ player linkItem "ItemGPS";
 player linkItem "tf_anprc152";
 player linkItem "NVGoggles_INDEP";
 [player,"CFB_Medic"] call bis_fnc_setUnitInsignia;
-    player addItemToBackpack "ACE_EarPlugs";
-    player addItemToUniform "ACE_surgicalKit";
-    for "_i" from 1 to 8 do {player addItemToBackpack "ACE_morphine";};
-    for "_i" from 1 to 8 do {player addItemToBackpack "ACE_epinephrine";};
-    for "_i" from 1 to 12 do {player addItemToBackpack "ACE_atropine";};
-    for "_i" from 1 to 15 do {player addItemToBackpack "ACE_fieldDressing";};
-    for "_i" from 1 to 20 do {player addItemToBackpack "ACE_elasticBandage";};
-    for "_i" from 1 to 15 do {player addItemToBackpack "ACE_quikclot";};
-    for "_i" from 1 to 20 do {player addItemToBackpack "ACE_packingBandage";};
-    for "_i" from 1 to 6 do {player addItemToBackpack "ACE_salineIV_500";};
-    for "_i" from 1 to 5 do {player addItemToBackpack "ACE_tourniquet";};
-    for "_i" from 1 to 2 do {player addItemToBackpack "ACE_personalAidKit";};
+
 _medicalLevel = "jtf2_param_ace_medical_level" call BIS_fnc_getParamValue;
 if (_medicalLevel == 1) then{
     comment "Advanced Medical Gear";
+    for "_i" from 1 to 2 do {player addItemToUniform "ACE_personalAidKit";};
     player addItemToBackpack "ACE_EarPlugs";
-    player addItemToUniform "ACE_surgicalKit";
     for "_i" from 1 to 8 do {player addItemToBackpack "ACE_morphine";};
     for "_i" from 1 to 8 do {player addItemToBackpack "ACE_epinephrine";};
     for "_i" from 1 to 12 do {player addItemToBackpack "ACE_atropine";};
