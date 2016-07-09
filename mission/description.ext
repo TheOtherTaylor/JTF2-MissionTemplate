@@ -63,6 +63,19 @@ class Params
 		default = 0;
 	};
     
+	class jtf2_param_blufor_uniform_setting
+	{
+		title = "Blufor Starting Uniform";
+		values[] = { 0, 1, 2, 3, 4, 5};
+		texts[] = { "CAF - CADPAT TW",
+					"CAF - CADPAT AR", 
+					"USMC - MARPAT WD", 
+					"USMC - MARPAT D", 
+					"US Army - OCP",
+					"US Army - UCP"};
+		default = 0;
+	};
+
     class jtf2_param_independent_friendly_setting
 	{
 		title = "Independent Allegiance";

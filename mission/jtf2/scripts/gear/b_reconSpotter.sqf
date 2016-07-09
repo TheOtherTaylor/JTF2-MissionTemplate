@@ -9,11 +9,57 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player forceAddUniform "CFB_TW_Uniform";
-player addVest "CFB_TW_Vest_PlateCarrier1";
-player addBackpack "tf_rt1523g_bwmod";
-player addHeadgear "CFB_TW_Helmet_ECH";
-player addGoggles "G_Tactical_Clear";
+_uniform = "jtf2_param_blufor_uniform_setting" call BIS_fnc_getParamValue;
+switch (_uniform) do{
+    case 0:{ //"CAF - CADPAT TW"
+        player forceAddUniform "CFB_TW_Rolled_Uniform";
+        player addVest "CFB_TW_Vest_PlateCarrier2";
+        player addBackpack "tf_rt1523g_bwmod";
+        player addHeadgear "CFB_TW_Helmet_ECH";
+        player addGoggles "G_Tactical_Clear";
+        player linkItem "NVGoggles_INDEP";
+    };
+    case 1:{//"CAF - CADPAT AR"
+        player forceAddUniform "CFB_AR_Rolled_Uniform";
+        player addVest "CFB_AR_Vest_PlateCarrier2";
+        player addBackpack "tf_rt1523g_rhs";
+        player addHeadgear "CFB_AR_Helmet_ECH";
+        player addGoggles "G_Tactical_Clear";
+        player linkItem "ACE_NVG_Wide";
+    };
+    case 2:{//"USMC - MARPAT WD"
+        player forceAddUniform "rhs_uniform_FROG01_wd";
+        player addVest "rhsusf_spc_squadleader";
+        player addBackpack "tf_rt1523g_rhs";
+        player addHeadgear "rhsusf_mich_helmet_marpatwd_headset";
+        player addGoggles "G_Tactical_Clear";
+        player linkItem "ACE_NVG_Wide";
+    };
+    case 3:{//"USMC - MARPAT D"
+        player forceAddUniform "rhs_uniform_FROG01_d";
+        player addVest "rhsusf_spc_squadleader";
+        player addBackpack "tf_rt1523g_rhs";
+        player addHeadgear "rhsusf_mich_helmet_marpatd_headset";
+        player addGoggles "G_Tactical_Clear";
+        player linkItem "ACE_NVG_Wide";
+    };
+    case 4:{//"US Army - OCP"
+        player forceAddUniform "rhs_uniform_cu_ocp";
+        player addVest "rhsusf_iotv_ocp_Squadleader";
+        player addBackpack "tf_rt1523g_rhs";
+        player addHeadgear "rhsusf_ach_helmet_headset_ocp";
+        player addGoggles "G_Tactical_Clear";
+        player linkItem "ACE_NVG_Wide";
+    };
+    case 5:{//"US Army - UCP"
+        player forceAddUniform "rhs_uniform_cu_ucp";
+        player addVest "rhsusf_iotv_ucp_Squadleader";
+        player addBackpack "tf_rt1523g_rhs";
+        player addHeadgear "rhsusf_ach_helmet_headset_ucp";
+        player addGoggles "G_Tactical_Clear";
+        player linkItem "ACE_NVG_Wide";
+    };
+};
 
 comment "Add weapons";
 player addItemToVest "9Rnd_45ACP_Mag"; //Preload Magazine
@@ -50,7 +96,6 @@ player linkItem "ItemCompass";
 player linkItem "tf_microdagr";
 player linkItem "tf_anprc152";
 player linkItem "ItemGPS";
-player linkItem "NVGoggles_INDEP";
 
 _medicalLevel = "jtf2_param_ace_medical_level" call BIS_fnc_getParamValue;
 if (_medicalLevel == 1) then{

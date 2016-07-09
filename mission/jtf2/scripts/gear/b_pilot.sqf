@@ -9,9 +9,57 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player forceAddUniform "CFB_RCAF_Coveralls_Sage";
-player addVest "CFB_TW_Vest_Tactical";
-player addHeadgear "H_PilotHelmetHeli_B";
+_uniform = "jtf2_param_blufor_uniform_setting" call BIS_fnc_getParamValue;
+switch (_uniform) do{
+    case 0:{ //"CAF - CADPAT TW"
+        player forceAddUniform "CFB_RCAF_Coveralls_Sage";
+        player addVest "CFB_TW_Vest_Tactical";
+        player addHeadgear "rhsusf_hgu56p";
+        player linkItem "NVGoggles_INDEP";
+
+
+    };
+    case 1:{//"CAF - CADPAT AR"
+        player forceAddUniform "CFB_RCAF_Coveralls_Sage";
+        player addVest "CFB_AR_Vest_Tactical";
+        player addHeadgear "rhsusf_hgu56p";
+        player linkItem "ACE_NVG_Wide";
+
+
+    };
+    case 2:{//"USMC - MARPAT WD"
+        player forceAddUniform "U_B_HeliPilotCoveralls";
+        player addVest "V_TacVest_oli";
+        player addHeadgear "rhsusf_hgu56p";
+        player linkItem "ACE_NVG_Wide";
+
+
+    };
+    case 3:{//"USMC - MARPAT D"
+        player forceAddUniform "U_B_HeliPilotCoveralls";
+        player addVest "V_TacVest_khk";
+        player addHeadgear "rhsusf_hgu56p";
+        player linkItem "ACE_NVG_Wide";
+
+
+    };
+    case 4:{//"US Army - OCP"
+        player forceAddUniform "rhs_uniform_cu_ocp";
+        player addVest "V_TacVest_khk";
+        player addHeadgear "rhsusf_hgu56p";
+        player linkItem "ACE_NVG_Wide";
+
+
+    };
+    case 5:{//"US Army - UCP"
+        player forceAddUniform "rhs_uniform_cu_ucp";
+        player addVest "V_TacVest_khk";
+        player addHeadgear "rhsusf_hgu56p";
+        player linkItem "ACE_NVG_Wide";
+
+
+    };
+};
 
 comment "Add weapons";
 player addItemToVest "rhs_mag_30Rnd_556x45_Mk318_Stanag"; //Preload Magazine
@@ -32,7 +80,6 @@ player linkItem "ItemCompass";
 player linkItem "ACE_Altimeter";
 player linkItem "tf_anprc152";
 player linkItem "ItemGPS";
-player linkItem "NVGoggles_INDEP";
 
 _medicalLevel = "jtf2_param_ace_medical_level" call BIS_fnc_getParamValue;
 if (_medicalLevel == 1) then{

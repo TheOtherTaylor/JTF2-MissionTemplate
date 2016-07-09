@@ -49,7 +49,9 @@ class AddonsMetaData
 		class Item2
 		{
 			className="ace_explosives";
-			name="ace_explosives";
+			name="ACE3 - Explosives";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 		class Item3
 		{
@@ -76,7 +78,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="JTF2 Dynamic Missions (v.3.1.2)";
+		briefingName="JTF2 Dynamic Missions (v.3.1.3)";
 		overviewText="A blank mission template for Zeus missions.";
 		resistanceWest=0;
 		startWeather=0;
