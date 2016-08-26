@@ -9,34 +9,49 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player forceAddUniform "rhs_uniform_emr_patchless";
-for "_i" from 1 to 10 do {player addItemToUniform "ACE_fieldDressing";};
-for "_i" from 1 to 5 do {player addItemToUniform "ACE_morphine";};
-player addItemToUniform "ACE_epinephrine";
-for "_i" from 1 to 2 do {player addItemToUniform "SmokeShell";};
-for "_i" from 1 to 2 do {player addItemToUniform "SmokeShellGreen";};
-player addVest "rhs_6b23_digi_6sh92_vog_headset";
-player addItemToVest "ACE_EarPlugs";
-player addItemToVest "rhs_mag_rgd5";
-for "_i" from 1 to 10 do {player addItemToVest "rhs_30Rnd_545x39_AK_green";};
-player addBackpack "tf_mr3000_rhs";
-for "_i" from 1 to 2 do {player addItemToBackpack "ACE_EarPlugs";};
-player addItemToBackpack "ACE_MapTools";
-for "_i" from 1 to 6 do {player addItemToBackpack "rhs_VOG25";};
-for "_i" from 1 to 5 do {player addItemToBackpack "rhs_VG40OP_white";};
-for "_i" from 1 to 4 do {player addItemToBackpack "rhs_VG40OP_green";};
-for "_i" from 1 to 4 do {player addItemToBackpack "rhs_VG40OP_red";};
-player addHeadgear "rhs_6b27m_digi";
+_uniform = "jtf2_param_opfor_uniform_setting" call BIS_fnc_getParamValue;
+switch (_uniform) do{
+    case 0:{ //"EMR-Summer"
+        player forceAddUniform "rhs_uniform_emr_patchless";
+        player addVest "rhs_6b23_digi_6sh92_vog_headset";
+        player addHeadgear "rhs_6b27m_digi";
+        player addGoggles "rhs_googles_clear";
+        player linkItem "NVGoggles_INDEP";
+        player addBackpack "tf_mr3000_rhs";
+    };
+    case 1:{//"EMR-Desert"
+        player forceAddUniform "rhs_uniform_emr_des_patchless";
+        player addVest "rhsgref_6b23_khaki_officer";
+        player addHeadgear "rhs_6b27m_green";
+        player addGoggles "rhs_googles_clear";
+        player linkItem "ACE_NVG_Wide";
+        player addBackpack "tf_mr3000_rhs";
+    };
+};
 
 comment "Add weapons";
+player addItemToVest "rhs_30Rnd_545x39_AK_green";//preload Mag
+player addItemToBackpack "rhs_VOG25"; //Preload UGL
 player addWeapon "rhs_weap_ak74m_gp25";
 player addPrimaryWeaponItem "rhs_acc_dtk";
 player addWeapon "Rangefinder";
 
 comment "Add items";
+player addItemToUniform "ACE_EarPlugs";
+player addItemToUniform "ACE_IR_Strobe_Item";
+player addItemToUniform "ACE_MapTools";
+for "_i" from 1 to 9 do {player addItemToVest "rhs_30Rnd_545x39_AK_green";};
+player addItemToBackpack "rhs_mag_rgd5";
+for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};
+for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShellGreen";};
+for "_i" from 1 to 4 do {player addItemToBackpack "rhs_VOG25";};
+for "_i" from 1 to 4 do {player addItemToBackpack "rhs_GRD40_White";};
+for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Green";};
+for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red";};
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player linkItem "tf_fadak_3";
+player linkItem "tf_fadak";
 player linkItem "ItemGPS";
-player linkItem "NVGoggles_INDEP";
+
+[] execVM "jtf2\scripts\gear\aceMedical_Rifleman.sqf";

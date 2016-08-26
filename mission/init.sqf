@@ -1,11 +1,11 @@
 // Setup the pools for reinforcements if CFB_Skins is running.
 [] execVM "Ares_AddCfbReinforcementPools.sqf";
-MCC_path = ""; // Keeps specatator script from freaking out.
+//MCC_path = ""; // Keeps specatator script from freaking out.
 // TODO enable when this is complete.
 // [] execVM "Ares_addClassRestrictedArsenalModule.sqf";
 // [] execVM "Ares_addRespawnTicketModules.sqf";
 
-enableSaving [false, false]; //Don't allow saving
+//enableSaving [false, false]; //Don't allow saving
 enableSentences false; // Keep the commander units from saying things automatically
 
 ////TFAR settings (currently all commented out, will fix in future)

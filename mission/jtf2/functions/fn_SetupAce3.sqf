@@ -3,49 +3,43 @@
 */
 
 if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then{
-	_medicalLevel = 1;
-	_enableReviveSetting = 1;
-	if (("jtf2_param_ace_medical_level" call BIS_fnc_getParamValue) == 1) then{
-		diag_log "Applying ACE Advanced medical options.";
-		_medicalLevel = 2;
-		_enableReviveSetting = 0;
-	}else{
-		diag_log "Applying ACE Basic medical options.";
-	};
-	
+	_medicalLevel  = ("jtf2_param_ace_medical_level" call BIS_fnc_getParamValue); //Default Basic Medical
+	_reviveSetting = ("jtf2_param_revive_setting" call BIS_fnc_getParamValue);	//Default on for basic medical
+	_preventDeath  = ("jtf2_param_prevent_death" call BIS_fnc_getParamValue);			//Default off for basic medical
+
 	// Look up defaults and types from https://github.com/acemod/ACE3/blob/master/addons/medical/ACE_Settings.hpp
 	// From 'Medical Settings' module (https://github.com/acemod/ACE3/blob/master/addons/medical/functions/fnc_moduleMedicalSettings.sqf)
-	["ace_medical_level", _medicalLevel] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Basic, 2 = Advanced
-	["ace_medical_medicSetting", _medicalLevel] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Basic, 2 = Advanced
-	["ace_medical_allowLitterCreation", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled
-	["ace_medical_litterCleanUpDelay", 120] call ace_common_fnc_setParameter; // Time in seconds. 0 = Never cleanup. Default=120
-	["ace_medical_enableScreams", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled
-	["ace_medical_playerDamageThreshold", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1
-	["ace_medical_AIDamageThreshold", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1
-	["ace_medical_enableUnconsciousnessAI", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = 50/50, 2 = Enabled
-	["ace_medical_preventInstaDeath", 0] call ace_common_fnc_setParameter; // 0* = Disabled, 1 = Enabled
-	["ace_medical_bleedingCoefficient", 1] call ace_common_fnc_setParameter; // Scalar. Default = 1
-	["ace_medical_painCoefficient", 1] call ace_common_fnc_setParameter; // Scalar, Default = 1
-	["ace_medical_keepLocalSettingsSynced", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled
+	["ace_medical_level", _medicalLevel] call ace_common_fnc_setParameter; 				// 0 = Disabled, 1* = Basic, 2 = Advanced
+	["ace_medical_medicSetting", _medicalLevel] call ace_common_fnc_setParameter; 		// 0 = Disabled, 1* = Basic, 2 = Advanced
+	["ace_medical_allowLitterCreation", 1] call ace_common_fnc_setParameter; 			// 0 = Disabled, 1* = Enabled
+	["ace_medical_litterCleanUpDelay", 120] call ace_common_fnc_setParameter; 			// Time in seconds. 0 = Never cleanup. Default=120
+	["ace_medical_enableScreams", 1] call ace_common_fnc_setParameter; 					// 0 = Disabled, 1* = Enabled
+	["ace_medical_playerDamageThreshold", 1] call ace_common_fnc_setParameter; 			// Scalar. Default = 1
+	["ace_medical_AIDamageThreshold", 1] call ace_common_fnc_setParameter; 				// Scalar. Default = 1
+	["ace_medical_enableUnconsciousnessAI", 1] call ace_common_fnc_setParameter; 		// 0 = Disabled, 1* = 50/50, 2 = Enabled
+	["ace_medical_preventInstaDeath", _preventDeath] call ace_common_fnc_setParameter; 	// 0*= Disabled, 1 = Enabled
+	["ace_medical_bleedingCoefficient", 1] call ace_common_fnc_setParameter; 			// Scalar. Default = 1
+	["ace_medical_painCoefficient", 1] call ace_common_fnc_setParameter; 				// Scalar, Default = 1
+	["ace_medical_keepLocalSettingsSynced", 1] call ace_common_fnc_setParameter; 		// 0 = Disabled, 1* = Enabled
 	
 	// From 'Revive Settings' module (https://github.com/acemod/ACE3/blob/master/addons/medical/functions/fnc_moduleReviveSettings.sqf)
-	["ace_medical_enableRevive", _enableReviveSetting] call ace_common_fnc_setParameter; // 0* = Disabled, 1 = Players Only, 2 = Players and AI
-	["ace_medical_maxReviveTime", 300] call ace_common_fnc_setParameter; // Scalar. Default = 120
-	["ace_medical_amountOfReviveLives", -1] call ace_common_fnc_setParameter; // Scalar. -1 = Disabled. Default = -1
+	["ace_medical_enableRevive", _reviveSetting] call ace_common_fnc_setParameter;// 0*= Disabled, 1 = Players Only, 2 = Players and AI
+	["ace_medical_maxReviveTime", 300] call ace_common_fnc_setParameter; 				// Scalar. Default: 120
+	["ace_medical_amountOfReviveLives", -1] call ace_common_fnc_setParameter; 			// Scalar. -1*= Disabled
 	
 	// From 'Advanced Medical Settings' module (https://github.com/acemod/ACE3/blob/master/addons/medical/functions/fnc_moduleAdvancedMedicalSettings.sqf)
-	["ace_medical_enableFor", 0] call ace_common_fnc_setParameter; // 0* = Players Only, 1 = Players and AI
-	["ace_medical_enableAdvancedWounds", 0] call ace_common_fnc_setParameter; // 0* = Disabled, 1 = Enabled - Re-opening of wounds
+	["ace_medical_enableFor", 0] call ace_common_fnc_setParameter; 						// 0* = Players Only, 1 = Players and AI
+	["ace_medical_enableAdvancedWounds", 0] call ace_common_fnc_setParameter; 			// 0* = Disabled, 1 = Enabled - Re-opening of wounds
 	//["ace_medical_enableAirway", X] call ace_common_fnc_setParameter;
 	//["ace_medical_enableFractures", X] call ace_common_fnc_setParameter;
-	["ace_medical_medicSetting_PAK", 1] call ace_common_fnc_setParameter; // 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
-	["ace_medical_medicSetting_SurgicalKit", 2] call ace_common_fnc_setParameter; // 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
-	["ace_medical_consumeItem_PAK", 1] call ace_common_fnc_setParameter; // 0* = No, 1 = Yes
-	["ace_medical_consumeItem_SurgicalKit", 0] call ace_common_fnc_setParameter; // 0* = No, 1 = Yes
-	["ace_medical_useLocation_PAK", 0] call ace_common_fnc_setParameter; // 0 = Anywhere, 1 = Medical Vehicles, 2 = Medical Facility, 3* = Vehicle & Facility, 4 = Disabled
-	["ace_medical_useLocation_SurgicalKit", 0] call ace_common_fnc_setParameter; // 0 = Anywhere, 1 = Medical Vehicles, 2* = Medical Facility, 3 = Vehicle & Facility, 4 = Disabled
-	["ace_medical_healHitPointAfterAdvBandage", 0] call ace_common_fnc_setParameter; //Bool, Not sure what this does, but defaults to 0
-	["ace_medical_painIsOnlySuppressed", 1] call ace_common_fnc_setParameter; //Bool, Not sure what this does, but defaults to 1
+	["ace_medical_medicSetting_PAK", 1] call ace_common_fnc_setParameter; 				// 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
+	["ace_medical_medicSetting_SurgicalKit", 2] call ace_common_fnc_setParameter; 		// 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
+	["ace_medical_consumeItem_PAK", 1] call ace_common_fnc_setParameter; 				// 0*= No, 1 = Yes
+	["ace_medical_consumeItem_SurgicalKit", 0] call ace_common_fnc_setParameter; 		// 0*= No, 1 = Yes
+	["ace_medical_useLocation_PAK", 0] call ace_common_fnc_setParameter; 				// 0 = Anywhere, 1 = Medical Vehicles, 2 = Medical Facility, 3* = Vehicle & Facility, 4 = Disabled
+	["ace_medical_useLocation_SurgicalKit", 0] call ace_common_fnc_setParameter; 		// 0 = Anywhere, 1 = Medical Vehicles, 2* = Medical Facility, 3 = Vehicle & Facility, 4 = Disabled
+	["ace_medical_healHitPointAfterAdvBandage", 0] call ace_common_fnc_setParameter; 	//Bool. Not sure what this does, but defaults to 0
+	["ace_medical_painIsOnlySuppressed", 1] call ace_common_fnc_setParameter; 			//Bool. Not sure what this does, but defaults to 1
 }else{
 	diag_log "Not setting up medical options for ACE since PBO is not present.";
 };
@@ -66,16 +60,16 @@ if (isClass (configFile >> "CfgPatches" >> "ace_map")) then{
 };
 
 if (isClass (configFile >> "CfgPatches" >> "ace_mk6mortar")) then{
-	["ace_mk6mortar_airResistanceEnabled", 1] call ace_common_fnc_setParameter; // 0* = Disabled, 1 = Enabled. For Player Shots, Model Air Resistance and Wind Effects.
-	["ace_mk6mortar_allowComputerRangefinder", 0] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled. Show the Computer and Rangefinder (these NEED to be removed if you enable air resistance).
-	["ace_mk6mortar_allowCompass", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1* = Enabled. Show the MK6 Digital Compass.
+	["ace_mk6mortar_airResistanceEnabled", 1] call ace_common_fnc_setParameter; 	// 0*= Disabled, 1 = Enabled. For Player Shots, Model Air Resistance and Wind Effects.
+	["ace_mk6mortar_allowComputerRangefinder", 0] call ace_common_fnc_setParameter; // 0 = Disabled, 1*= Enabled. Show the Computer and Rangefinder (these NEED to be removed if you enable air resistance).
+	["ace_mk6mortar_allowCompass", 1] call ace_common_fnc_setParameter; 			// 0 = Disabled, 1*= Enabled. Show the MK6 Digital Compass.
 }else{
 	diag_log "Not setting up map options for ACE since PBO is not present.";
 };
 
 if (isClass (configFile >> "CfgPatches" >> "ace_finger")) then{
-    ["ace_finger_enabled", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1 = Enabled.
-	["ace_finger_maxRange", 4] call ace_common_fnc_setParameter; // Scalar. Default = 4 
+    ["ace_finger_enabled", 1] call ace_common_fnc_setParameter; 	// 0 = Disabled, 1 = Enabled.
+	["ace_finger_maxRange", 4] call ace_common_fnc_setParameter; 	// Scalar. Default: 4 
 }else{
 	diag_log "Not setting up pointing options for ACE since PBO is not present.";
 };

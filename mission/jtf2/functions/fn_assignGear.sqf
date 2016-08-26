@@ -28,8 +28,7 @@ if (local _unit) then
 			// RHS, ACE and CFB_Skins are required for these loadouts. Otherwise
 			// we'll just leave things at the default NATO loadouts.
 			if (_unitType == "spectator" || (
-					isClass (configFile >> "CfgPatches" >> "CFB_Skins")
-					&& isClass (configFile >> "CfgPatches" >> "rhs_weapons")
+					isClass (configFile >> "CfgPatches" >> "rhs_weapons")
 					&& isClass (configFile >> "CfgPatches" >> "ACE_Medical")
 					&& isClass (configFile >> "CfgPatches" >> "task_force_radio"))) then
 			{

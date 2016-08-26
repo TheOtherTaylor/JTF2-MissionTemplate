@@ -12,17 +12,17 @@ comment "Add containers";
 _uniform = "jtf2_param_opfor_uniform_setting" call BIS_fnc_getParamValue;
 switch (_uniform) do{
     case 0:{ //"EMR-Summer"
-        player forceAddUniform "rhs_uniform_df15";
-        player addVest "rhs_vydra_3m";
-        player addHeadgear "rhs_zsh7a_mike";
+        player forceAddUniform "rhs_uniform_emr_patchless";
+        player addVest "rhs_6b23_digi_6sh92_vog";
+        player addHeadgear "rhs_Booniehat_digi";
         player addGoggles "rhs_googles_clear";
-        player linkItem "ACE_NVG_Wide";
+        player linkItem "NVGoggles_INDEP";
 
     };
     case 1:{//"EMR-Desert"
-        player forceAddUniform "rhs_uniform_df15";
-        player addVest "rhs_vydra_3m";
-        player addHeadgear "rhs_zsh7a_mike";
+        player forceAddUniform "rhs_uniform_emr_des_patchless";
+        player addVest "rhsgref_6b23_khaki_sniper";
+        player addHeadgear "H_Booniehat_khk";
         player addGoggles "rhs_googles_clear";
         player linkItem "ACE_NVG_Wide";
 
@@ -30,19 +30,21 @@ switch (_uniform) do{
 };
 
 comment "Add weapons";
-player addItemToVest "rhs_30Rnd_545x39_AK"; //Preload Mag
-player addWeapon "rhs_weap_ak74m_folded";
-player addPrimaryWeaponItem "rhs_acc_dtk";
+player addItemToUniform "rhs_10Rnd_762x54mmR_7N1";//Preload Mag
+player addWeapon "rhs_weap_svdp_npz";
+player addPrimaryWeaponItem "rhs_acc_tgpv";
+player addPrimaryWeaponItem "optic_AMS";
+player addWeapon "Binocular";
 
 comment "Add items";
 player addItemToUniform "ACE_EarPlugs";
 player addItemToUniform "ACE_IR_Strobe_Item";
 player addItemToUniform "ACE_MapTools";
 player addItemToVest "rhs_mag_rgd5";
-player addItemToVest "SmokeShell";
-player addItemToVest "SmokeShellGreen";
-player addItemToVest "SmokeShellRed";
-for "_i" from 1 to 6 do {player addItemToVest "rhs_30Rnd_545x39_AK";};
+for "_i" from 1 to 2 do {player addItemToVest "SmokeShell";};
+for "_i" from 1 to 2 do {player addItemToVest "SmokeShellGreen";};
+for "_i" from 1 to 2 do {player addItemToVest "SmokeShellRed";};
+for "_i" from 1 to 13 do {player addItemToVest "rhs_10Rnd_762x54mmR_7N1";};
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
