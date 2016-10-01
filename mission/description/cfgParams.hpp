@@ -78,13 +78,13 @@ class Params{
         default = 2;
     };
     class jtf2_param_prevent_death{
-        title = "Prevent Death on Initial Damage"
+        title = "Prevent Death on Initial Damage";
         values[] = {0,1};
         texts[] = {"Off","On"};
         default = 1;
     };
     class jtf2_param_revive_setting{
-        title = "Revive Setting"
+        title = "Revive Setting";
         values[] = {0,1};
         texts[] = {"Disabled (Recommended)","Enabled Players Only (Basic Only!)"};
         default = 0;

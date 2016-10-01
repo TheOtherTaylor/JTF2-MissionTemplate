@@ -74,8 +74,22 @@ if (isClass (configFile >> "CfgPatches" >> "ace_finger")) then{
 	diag_log "Not setting up pointing options for ACE since PBO is not present.";
 };
 
-if (isClass (configFile >> "CfgPatches" >> "ace_sitting")) then{
-    ["ace_sitting_enable", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1 = Enabled.
+if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then{
+	["ace_advanced_fatigue_enabled", 1] call ace_common_fnc_setParameter;				// 0 = Disabled, 1*=Enabled
+	["ace_advanced_fatigue_enableStaminaBar", 1] call ace_common_fnc_setParameter;		// 0 = Disabled, 1*=Enabled
+	["ace_advanced_fatigue_performanceFactor", 1.5] call ace_common_fnc_setParameter;		// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
+	["ace_advanced_fatigue_recoveryFactor", 1.5] call ace_common_fnc_setParameter;		// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
+	["ace_advanced_fatigue_loadFactor", 1] call ace_common_fnc_setParameter;			// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
+	["ace_advanced_fatigue_terrainGradientFactor", 1] call ace_common_fnc_setParameter;	// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
+	diag_log "Applied ACE Map options.";
 }else{
-	diag_log "Not setting up sitting options for ACE since PBO is not present.";
+	diag_log "Not setting up advanced fatigues options for ACE since PBO is not present.";
 };
+
+
+//Functionality Moved to ACEX
+//if (isClass (configFile >> "CfgPatches" >> "ace_sitting")) then{
+//    ["ace_sitting_enable", 1] call ace_common_fnc_setParameter; // 0 = Disabled, 1 = Enabled.
+//}else{
+//	diag_log "Not setting up sitting options for ACE since PBO is not present.";
+//};
