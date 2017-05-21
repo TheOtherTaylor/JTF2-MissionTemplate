@@ -5,18 +5,31 @@ class Params{
         texts[] = { "No", "Yes" };
         default = 1;
     };
-    class jtf2_param_starting_loadouts{
-        title = "Starting equipment";
-        values[] = { 0, 1 };
-        texts[] = { "JTF2 Custom Loadouts", "Default ARMA Loadouts" };
-        default = 0;
-    };
     class jtf2_param_allow_grass_changes{
         title = "Allow players to change grass view settings";
         values[] = { 0, 1, 2 };
         texts[] = { "No", "Yes - But don't let them turn it off completely", "Yes - allow everything" };
         default = 0;
     };
+    class jtf2_param_spawn_options_spacer{
+        title = "--------------------- SPAWN OPTIONS ----------------------------";
+        values[] = { 0, 1 };
+        texts[] = { " ", " " };
+        default = 0;
+    };
+    class jtf2_param_starting_loadouts{
+        title = "Starting equipment";
+        values[] = { 0, 1, 2 };
+        texts[] = { "JTF2 Custom Loadouts", "Default ARMA Loadouts", "No Gear" };
+        default = 0;
+    };
+    class jtf2_param_limited_loadouts{
+        title = "Limited Equipment";
+        values[] = { 0, 1 };
+        texts[] = { "Normal Loadouts", "Limited Loadouts: No NVG, GPS, Radio, Optics" };
+        default = 0;
+    };
+
     class jtf2_param_create_spawn{
         title = "Create spawn points automatically?";
         values[] = { 0, 1 };

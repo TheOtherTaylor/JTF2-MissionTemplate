@@ -19,7 +19,7 @@ if (local _unit) then
 	if (_unitType == "spectator") then
 	{
 		// If we're assigning spectator gear, that's a special case that should work regardless of mods.
-		_loadoutSetting = 0;
+		_loadoutSetting = 3;
 	};
 	switch (_loadoutSetting) do
 	{
@@ -34,6 +34,23 @@ if (local _unit) then
 			{
 				[] execVM "jtf2\scripts\gear\" + _unitType + ".sqf";
 			};
+		};
+		case 2: //Remove All Gear
+		{
+			removeUniform _unit;
+			removeAllWeapons _unit;
+			removeBackpack _unit;
+			removeAllItems _unit;
+			removeVest _unit;
+			removeHeadgear _unit;
+			_unit unlinkItem "NVGoggles";
+			_unit unlinkItem "NVGoggles_OPFOR";
+			_unit unlinkItem "NVGoggles_INDEP";
+			_unit unlinkItem "ItemGPS";
+			_unit linkItem "ItemMap";
+			_unit linkItem "ItemCompass";
+			_unit linkItem "ItemRadio";
+			_unit linkItem "ItemWatch";
 		};
 		default
 		{

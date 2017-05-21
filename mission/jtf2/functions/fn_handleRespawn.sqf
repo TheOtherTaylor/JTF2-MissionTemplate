@@ -7,12 +7,12 @@ if (_allowSpectator > 0 && isClass (configFile >> "CfgPatches" >> "ace_spectator
 	// retrieve variable to track alternating spectator/respawn. Nil case checked in onPlayerKilled.sqf
 	_variableName = "JTF2_Spectator_Status_" + (getPlayerUID player);
     private _var = missionNamespace getVariable _variableName;
-    if (_var == 1) then{ 
-        missionNamespace setVariable [_variableName, 0];
+    if (_var == 0) then{ 
+        missionNamespace setVariable [_variableName, 1];
         [player, true] call ace_spectator_fnc_stageSpectator;
         [true] call ace_spectator_fnc_setSpectator;
     }else{ 
-        missionNamespace setVariable [_variableName, 1];
+        missionNamespace setVariable [_variableName, 0];
         [player, false] call ace_spectator_fnc_stageSpectator;
         [false] call ace_spectator_fnc_setSpectator;
         //[ace_spectator_fnc_handleIcons, 0] call CBA_fnc_addPerFrameHandler;

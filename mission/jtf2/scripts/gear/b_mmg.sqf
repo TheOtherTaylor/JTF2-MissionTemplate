@@ -68,7 +68,6 @@ switch (_uniform) do{
 comment "Add weapons";
 player addItemToVest "rhsusf_100Rnd_762x51"; //Preload Belt
 player addWeapon "rhs_weap_m240B_CAP";
-player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
 
 comment "Add items";
 player addItemToUniform "ACE_EarPlugs";
@@ -82,7 +81,23 @@ for "_i" from 1 to 2 do {player addItemToBackpack "rhsusf_100rnd_762x51";};
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player linkItem "ItemGPS";
-player linkItem "tf_anprc152_1";
+
+_limited = "jtf2_param_limited_loadouts" call BIS_fnc_getParamValue;
+switch (_limited) do{
+    case 0:{ //"Normal Loadouts"
+        player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
+        player linkItem "tf_anprc152";
+        player linkItem "ItemGPS";
+    };
+    case 1:{//"Limited Loadouts"
+        //Just In Case
+        player unlinkItem "NVGoggles";
+        player unlinkItem "NVGoggles_OPFOR";
+        player unlinkItem "NVGoggles_INDEP";
+        player unlinkItem "ACE_NVG_Wide";
+        player unlinkItem "ItemGPS";
+        player linkItem "ItemRadio";
+    };
+};
 
 [] execVM "jtf2\scripts\gear\aceMedical_Rifleman.sqf";

@@ -146,3 +146,13 @@ if (!isDedicated) then{
 			];
 	};
 };
+
+//Add Disconnect event handler
+addMissionEventHandler ["HandleDisconnect",
+{
+    _unit = _this select 0;
+    _uid = _this select 2;
+    //deleteVehicle _unit;
+    _variableName = "JTF2_Spectator_Status_" + _uid;
+    missionNamespace setVariable [_variableName, 1]; //make sure player spawns in correctly on reconnect
+}];
