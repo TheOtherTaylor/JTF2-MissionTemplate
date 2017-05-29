@@ -36,6 +36,12 @@ class Params{
         texts[] = { "No", "Yes" };
         default = 0;
     };
+    class JTF2_param_enableRadioPreset {
+        title = "Enable Preset Radios (DO NOT ALTER):";
+        values[] = {true,false};
+        texts[] = {"Enabled","Disabled"};
+        default = true;
+    };
     class jtf2_param_faction_options_spacer{
         title = "--------------------- FACTION OPTIONS ----------------------------";
         values[] = { 0, 1 };

@@ -1,4 +1,4 @@
-version=52;
+version=53;
 class EditorData
 {
 	moveGridStep=1;
@@ -37,14 +37,14 @@ class AddonsMetaData
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item1
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item2
 		{
@@ -58,14 +58,14 @@ class AddonsMetaData
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item4
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -78,7 +78,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="JTF2 Dynamic Missions (v.3.2.4)";
+		briefingName="JTF2 Dynamic Missions (v.3.3.0)";
 		overviewText="A blank mission template for Zeus missions.";
 		resistanceWest=0;
 		startWeather=0;
@@ -119,8 +119,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="[this, ""b_command""] call JTF2_fnc_SetGear; this setGroupID [""Lumberjack""];";
-						description="6 Lumberjack Company CO";
+						init="[this, ""b_command""] call JTF2_fnc_SetGear; Blue_6 = group this;";
+						description="6 Argonaut Company CO";
 						isPlayable=1;
 					};
 					id=1;
@@ -131,7 +131,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -238,8 +238,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_medic""] call JTF2_fnc_SetGear; this setGroupID [""Lumberjack""];";
-						description="6 Lumberjack Company Medic";
+						init="[this, ""b_medic""] call JTF2_fnc_SetGear; Blue_6 = group this;";
+						description="6 Argonaut Company Medic";
 						isPlayable=1;
 					};
 					id=2;
@@ -250,7 +250,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -356,8 +356,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_command""] call JTF2_fnc_SetGear; this setGroupID [""Lumberjack""];";
-						description="5 Lumberjack Company XO";
+						init="[this, ""b_command""] call JTF2_fnc_SetGear; Blue_6 = group this;";
+						description="5 Argonaut Company XO";
 						isPlayable=1;
 					};
 					id=3;
@@ -368,7 +368,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -455,8 +455,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_jtac""] call JTF2_fnc_SetGear; this setGroupID [""Lumberjack""];";
-						description="6 Lumberjack Company JTAC";
+						init="[this, ""b_jtac""] call JTF2_fnc_SetGear; Blue_6 = group this;";
+						description="6 Argonaut Company JTAC";
 						isPlayable=1;
 					};
 					id=4;
@@ -467,7 +467,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -567,7 +567,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 6";
+							value="Argonaut 6";
 						};
 					};
 				};
@@ -594,8 +594,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="[this, ""b_command""] call JTF2_fnc_SetGear; this setGroupID [""1-6""];";
-						description="1-6 Lumberjack Platoon CO";
+						init="[this, ""b_command""] call JTF2_fnc_SetGear; Blue_1_6 = group this;";
+						description="1-6 Argonaut Platoon CO";
 						isPlayable=1;
 					};
 					id=6;
@@ -606,7 +606,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -713,8 +713,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_medic""] call JTF2_fnc_SetGear;  this setGroupID [""1-6""];";
-						description="1-6 Lumberjack Platoon Medic";
+						init="[this, ""b_medic""] call JTF2_fnc_SetGear;  Blue_1_6 = group this;";
+						description="1-6 Argonaut Platoon Medic";
 						isPlayable=1;
 					};
 					id=7;
@@ -725,7 +725,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -831,8 +831,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_uav""] call JTF2_fnc_SetGear;  this setGroupID [""1-6""];";
-						description="1-6 Lumberjack Platoon UAV Operator";
+						init="[this, ""b_uav""] call JTF2_fnc_SetGear;  Blue_1_6 = group this;";
+						description="1-6 Argonaut Platoon UAV Operator";
 						isPlayable=1;
 					};
 					id=8;
@@ -843,7 +843,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -930,8 +930,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_jtac""] call JTF2_fnc_SetGear; this setGroupID [""1-6""];";
-						description="1-6 Lumberjack Platoon JTAC";
+						init="[this, ""b_jtac""] call JTF2_fnc_SetGear; Blue_1_6 = group this;";
+						description="1-6 Argonaut Platoon JTAC";
 						isPlayable=1;
 					};
 					id=9;
@@ -942,7 +942,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1042,7 +1042,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 1-6";
+							value="Argonaut 1-6";
 						};
 					};
 				};
@@ -1069,8 +1069,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Section Leader";
 						isPlayable=1;
 					};
 					id=11;
@@ -1081,7 +1081,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1187,8 +1187,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_gl""] call JTF2_fnc_SetGear; this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Team Leader";
+						init="[this, ""b_gl""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Team Leader";
 						isPlayable=1;
 					};
 					id=12;
@@ -1199,7 +1199,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1305,8 +1305,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_lat""] call JTF2_fnc_SetGear; this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Rifleman (AT)";
+						init="[this, ""b_lat""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=13;
@@ -1317,7 +1317,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1423,8 +1423,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear;this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=14;
@@ -1435,7 +1435,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1541,8 +1541,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aar""] call JTF2_fnc_SetGear; this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Ammo Bearer";
+						init="[this, ""b_aar""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Ammo Bearer";
 						isPlayable=1;
 					};
 					id=15;
@@ -1553,7 +1553,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1659,8 +1659,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Marksman";
+						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Marksman";
 						isPlayable=1;
 					};
 					id=16;
@@ -1671,7 +1671,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1778,8 +1778,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear; this setGroupID [""1-1""];";
-						description="1-1 Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut CLS";
 						isPlayable=1;
 					};
 					id=17;
@@ -1790,7 +1790,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -1896,8 +1896,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear;this setGroupID [""1-1""];";
-						description="1-1 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_1_1 = group this;";
+						description="1-1 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=18;
@@ -1908,7 +1908,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2027,7 +2027,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 1-1";
+							value="Argonaut 1-1";
 						};
 					};
 				};
@@ -2054,8 +2054,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Section Leader";
 						isPlayable=1;
 					};
 					id=20;
@@ -2066,7 +2066,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2172,8 +2172,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_gl""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Team Leader";
+						init="[this, ""b_gl""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Team Leader";
 						isPlayable=1;
 					};
 					id=21;
@@ -2184,7 +2184,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2290,8 +2290,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_lat""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Rifleman (AT)";
+						init="[this, ""b_lat""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=22;
@@ -2302,7 +2302,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2408,8 +2408,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=23;
@@ -2420,7 +2420,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2526,8 +2526,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aar""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Ammo Bearer";
+						init="[this, ""b_aar""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Ammo Bearer";
 						isPlayable=1;
 					};
 					id=24;
@@ -2538,7 +2538,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2644,8 +2644,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Marksman";
+						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Marksman";
 						isPlayable=1;
 					};
 					id=25;
@@ -2656,7 +2656,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2763,8 +2763,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut CLS";
 						isPlayable=1;
 					};
 					id=26;
@@ -2775,7 +2775,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -2881,8 +2881,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""1-2""];";
-						description="1-2 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_1_2 = group this;";
+						description="1-2 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=27;
@@ -2893,7 +2893,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3012,7 +3012,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 1-2";
+							value="Argonaut 1-2";
 						};
 					};
 				};
@@ -3039,8 +3039,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear;  this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear;  Blue_1_3 = group this;";
+						description="1-3 Argonaut Section Leader";
 						isPlayable=1;
 					};
 					id=29;
@@ -3051,7 +3051,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3138,8 +3138,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_gl""] call JTF2_fnc_SetGear;  this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Team Leader";
+						init="[this, ""b_gl""] call JTF2_fnc_SetGear;  Blue_1_3 = group this;";
+						description="1-3 Argonaut Team Leader";
 						isPlayable=1;
 					};
 					id=30;
@@ -3150,7 +3150,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3237,8 +3237,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_lat""] call JTF2_fnc_SetGear;  this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Rifleman (AT)";
+						init="[this, ""b_lat""] call JTF2_fnc_SetGear;  Blue_1_3 = group this;";
+						description="1-3 Argonaut Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=31;
@@ -3249,7 +3249,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3336,8 +3336,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_1_3 = group this;";
+						description="1-3 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=32;
@@ -3348,7 +3348,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3435,8 +3435,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aar""] call JTF2_fnc_SetGear; this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Ammo Bearer";
+						init="[this, ""b_aar""] call JTF2_fnc_SetGear; Blue_1_3 = group this;";
+						description="1-3 Argonaut Ammo Bearer";
 						isPlayable=1;
 					};
 					id=33;
@@ -3447,7 +3447,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3534,8 +3534,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_marksman""] call JTF2_fnc_SetGear;  this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Marksman";
+						init="[this, ""b_marksman""] call JTF2_fnc_SetGear;  Blue_1_3 = group this;";
+						description="1-3 Argonaut Marksman";
 						isPlayable=1;
 					};
 					id=34;
@@ -3546,7 +3546,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3634,8 +3634,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear;  this setGroupID [""1-3""];";
-						description="1-3 Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear;  Blue_1_3 = group this;";
+						description="1-3 Argonaut CLS";
 						isPlayable=1;
 					};
 					id=35;
@@ -3646,7 +3646,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3752,8 +3752,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""1-3""];";
-						description="1-3 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_1_3 = group this;";
+						description="1-3 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=36;
@@ -3764,7 +3764,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -3864,7 +3864,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 1-3";
+							value="Argonaut 1-3";
 						};
 					};
 				};
@@ -3891,8 +3891,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="[this, ""b_command""] call JTF2_fnc_SetGear; this setGroupID [""2-6""];";
-						description="2-6 Lumberjack Platoon CO";
+						init="[this, ""b_command""] call JTF2_fnc_SetGear; Blue_2_6 = group this;";
+						description="2-6 Argonaut Platoon CO";
 						isPlayable=1;
 					};
 					id=38;
@@ -3903,7 +3903,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4010,8 +4010,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_medic""] call JTF2_fnc_SetGear; this setGroupID [""2-6""];";
-						description="2-6 Lumberjack Platoon Medic";
+						init="[this, ""b_medic""] call JTF2_fnc_SetGear; Blue_2_6 = group this;";
+						description="2-6 Argonaut Platoon Medic";
 						isPlayable=1;
 					};
 					id=39;
@@ -4022,7 +4022,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4128,8 +4128,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_uav""] call JTF2_fnc_SetGear; this setGroupID [""2-6""];";
-						description="2-6 Lumberjack Platoon UAV Operator";
+						init="[this, ""b_uav""] call JTF2_fnc_SetGear; Blue_2_6 = group this;";
+						description="2-6 Argonaut Platoon UAV Operator";
 						isPlayable=1;
 					};
 					id=40;
@@ -4140,7 +4140,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4227,8 +4227,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_jtac""] call JTF2_fnc_SetGear; this setGroupID [""2-6""];";
-						description="2-6 Lumberjack Platoon JTAC";
+						init="[this, ""b_jtac""] call JTF2_fnc_SetGear; Blue_2_6 = group this;";
+						description="2-6 Argonaut Platoon JTAC";
 						isPlayable=1;
 					};
 					id=41;
@@ -4239,7 +4239,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4339,7 +4339,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 2-6";
+							value="Argonaut 2-6";
 						};
 					};
 				};
@@ -4366,8 +4366,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Section Leader";
 						isPlayable=1;
 					};
 					id=43;
@@ -4378,7 +4378,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4465,8 +4465,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_gl""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Team Leader";
+						init="[this, ""b_gl""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Team Leader";
 						isPlayable=1;
 					};
 					id=44;
@@ -4477,7 +4477,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4564,8 +4564,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_lat""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Rifleman (AT)";
+						init="[this, ""b_lat""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=45;
@@ -4576,7 +4576,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4663,8 +4663,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=46;
@@ -4675,7 +4675,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4762,8 +4762,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aar""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Ammo Bearer";
+						init="[this, ""b_aar""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Ammo Bearer";
 						isPlayable=1;
 					};
 					id=47;
@@ -4774,7 +4774,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4861,8 +4861,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Marksman";
+						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Marksman";
 						isPlayable=1;
 					};
 					id=48;
@@ -4873,7 +4873,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -4961,8 +4961,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut CLS";
 						isPlayable=1;
 					};
 					id=49;
@@ -4973,7 +4973,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5079,8 +5079,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""2-1""];";
-						description="2-1 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_2_1 = group this;";
+						description="2-1 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=50;
@@ -5091,7 +5091,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5191,7 +5191,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 2-1";
+							value="Argonaut 2-1";
 						};
 					};
 				};
@@ -5218,8 +5218,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut Section Leader";
 						isPlayable=1;
 					};
 					id=52;
@@ -5230,7 +5230,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5317,8 +5317,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_gl""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Team Leader";
+						init="[this, ""b_gl""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut Team Leader";
 						isPlayable=1;
 					};
 					id=53;
@@ -5329,7 +5329,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5416,8 +5416,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_lat""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Rifleman (AT)";
+						init="[this, ""b_lat""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=54;
@@ -5428,7 +5428,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5515,8 +5515,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=55;
@@ -5527,7 +5527,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5614,8 +5614,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aar""] call JTF2_fnc_SetGear;  this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Ammo Bearer";
+						init="[this, ""b_aar""] call JTF2_fnc_SetGear;  Blue_2_2 = group this;";
+						description="2-2 Argonaut Ammo Bearer";
 						isPlayable=1;
 					};
 					id=56;
@@ -5626,7 +5626,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5713,8 +5713,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Marksman";
+						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut Marksman";
 						isPlayable=1;
 					};
 					id=57;
@@ -5725,7 +5725,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5813,8 +5813,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut CLS";
 						isPlayable=1;
 					};
 					id=58;
@@ -5825,7 +5825,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -5931,8 +5931,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""2-2""];";
-						description="2-2 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_2_2 = group this;";
+						description="2-2 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=59;
@@ -5943,7 +5943,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6043,7 +6043,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 2-2";
+							value="Argonaut 2-2";
 						};
 					};
 				};
@@ -6070,8 +6070,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Section Leader";
 						isPlayable=1;
 					};
 					id=61;
@@ -6082,7 +6082,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6169,8 +6169,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_gl""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Team Leader";
+						init="[this, ""b_gl""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Team Leader";
 						isPlayable=1;
 					};
 					id=62;
@@ -6181,7 +6181,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6268,8 +6268,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_lat""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Rifleman (AT)";
+						init="[this, ""b_lat""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Rifleman (AT)";
 						isPlayable=1;
 					};
 					id=63;
@@ -6280,7 +6280,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6367,8 +6367,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=64;
@@ -6379,7 +6379,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6466,8 +6466,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aar""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Ammo Bearer";
+						init="[this, ""b_aar""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Ammo Bearer";
 						isPlayable=1;
 					};
 					id=65;
@@ -6478,7 +6478,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6565,8 +6565,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Marksman";
+						init="[this, ""b_marksman""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Marksman";
 						isPlayable=1;
 					};
 					id=66;
@@ -6577,7 +6577,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6665,8 +6665,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut CLS";
 						isPlayable=1;
 					};
 					id=67;
@@ -6677,7 +6677,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6783,8 +6783,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ar""] call JTF2_fnc_SetGear; this setGroupID [""2-3""];";
-						description="2-3 Lumberjack Autorifleman";
+						init="[this, ""b_ar""] call JTF2_fnc_SetGear; Blue_2_3 = group this;";
+						description="2-3 Argonaut Autorifleman";
 						isPlayable=1;
 					};
 					id=68;
@@ -6795,7 +6795,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -6895,7 +6895,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack 2-3";
+							value="Argonaut 2-3";
 						};
 					};
 				};
@@ -6922,8 +6922,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack Heavy Weapon Section Leader";
+						init="[this, ""b_ftl""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut Heavy Weapon Section Leader";
 						isPlayable=1;
 					};
 					id=70;
@@ -6934,7 +6934,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7022,7 +7022,7 @@ class Mission
 					{
 						skill=0.60000002;
 						init="[this, ""b_gl""] call JTF2_fnc_SetGear;";
-						description="Lumberjack Heavy Weapons Team Leader";
+						description="Argonaut Heavy Weapons Team Leader";
 						isPlayable=1;
 					};
 					id=71;
@@ -7033,7 +7033,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7102,8 +7102,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_cls""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack CLS";
+						init="[this, ""b_cls""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut CLS";
 						isPlayable=1;
 					};
 					id=76;
@@ -7114,7 +7114,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7220,8 +7220,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_ammg""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack Asst. MMG";
+						init="[this, ""b_ammg""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut Asst. MMG";
 						isPlayable=1;
 					};
 					id=200;
@@ -7232,7 +7232,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7319,8 +7319,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_mmg""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack MMG";
+						init="[this, ""b_mmg""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut MMG";
 						isPlayable=1;
 					};
 					id=201;
@@ -7331,7 +7331,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7418,8 +7418,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_aat""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack Asst. AT";
+						init="[this, ""b_aat""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut Asst. AT";
 						isPlayable=1;
 					};
 					id=202;
@@ -7430,7 +7430,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7517,8 +7517,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_mmg""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack MMG";
+						init="[this, ""b_mmg""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut MMG";
 						isPlayable=1;
 					};
 					id=203;
@@ -7529,7 +7529,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7616,8 +7616,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_at""] call JTF2_fnc_SetGear; this setGroupID [""Weapons""];";
-						description="Lumberjack AT";
+						init="[this, ""b_at""] call JTF2_fnc_SetGear; Blue_W = group this;";
+						description="Argonaut AT";
 						isPlayable=1;
 					};
 					id=204;
@@ -7628,7 +7628,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7728,7 +7728,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack Heavy Weapons";
+							value="Argonaut Heavy Weapons";
 						};
 					};
 				};
@@ -7755,8 +7755,8 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_eod""] call JTF2_fnc_SetGear; this setVariable [""ace_medical_medicClass"", 1]; this setVariable [""ACE_isEOD"", true]; this setGroupID [""EOD""];";
-						description="Lumberjack EOD Team Lead (CFR)";
+						init="[this, ""b_eod""] call JTF2_fnc_SetGear; this setVariable [""ace_medical_medicClass"", 1]; this setVariable [""ACE_isEOD"", true]; Blue_E = group this;";
+						description="Argonaut EOD Team Lead (CFR)";
 						isPlayable=1;
 					};
 					id=79;
@@ -7767,7 +7767,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7873,8 +7873,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_eod""] call JTF2_fnc_SetGear; this setVariable [""ACE_isEOD"", true]; this setGroupID [""EOD""];";
-						description="Lumberjack EOD EOD Specialist";
+						init="[this, ""b_eod""] call JTF2_fnc_SetGear; this setVariable [""ACE_isEOD"", true]; Blue_E = group this;";
+						description="Argonaut EOD EOD Specialist";
 						isPlayable=1;
 					};
 					id=80;
@@ -7885,7 +7885,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -7991,8 +7991,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_eod""] call JTF2_fnc_SetGear; this setVariable [""ACE_isEOD"", true]; this setGroupID [""EOD""];";
-						description="Lumberjack EOD EOD Specialist";
+						init="[this, ""b_eod""] call JTF2_fnc_SetGear; this setVariable [""ACE_isEOD"", true]; Blue_E = group this;";
+						description="Argonaut EOD EOD Specialist";
 						isPlayable=1;
 					};
 					id=81;
@@ -8003,7 +8003,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8121,7 +8121,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Lumberjack EOD";
+							value="Argonaut EOD";
 						};
 					};
 				};
@@ -8147,7 +8147,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_reconSniper""] call JTF2_fnc_SetGear; this setGroupID [""Pathfinder""];";
+						init="[this, ""b_reconSniper""] call JTF2_fnc_SetGear; Blue_P = group this;";
 						description="Pathfinder";
 						isPlayable=1;
 					};
@@ -8159,7 +8159,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8267,7 +8267,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="[this, ""b_reconSpotter""] call JTF2_fnc_SetGear; this setGroupID [""Pathfinder""];";
+						init="[this, ""b_reconSpotter""] call JTF2_fnc_SetGear; Blue_P = group this;";
 						description="Pathfinder Lead";
 						isPlayable=1;
 					};
@@ -8279,7 +8279,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8424,7 +8424,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 1""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M1 = group this;";
 						description="1 Moose Commander";
 						isPlayable=1;
 					};
@@ -8436,7 +8436,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8542,7 +8542,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 1""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M1 = group this;";
 						description="1 Moose Gunner";
 						isPlayable=1;
 					};
@@ -8554,7 +8554,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8660,7 +8660,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 1""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M1 = group this;";
 						description="1 Moose Driver";
 						isPlayable=1;
 					};
@@ -8672,7 +8672,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8818,7 +8818,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 2""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M2 = group this;";
 						description="2 Moose Commander";
 						isPlayable=1;
 					};
@@ -8830,7 +8830,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -8936,7 +8936,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 2""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M2 = group this;";
 						description="2 Moose Gunner";
 						isPlayable=1;
 					};
@@ -8948,7 +8948,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9054,7 +9054,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 2""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M2 = group this;";
 						description="2 Moose Driver";
 						isPlayable=1;
 					};
@@ -9066,7 +9066,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9211,7 +9211,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 3""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M3 = group this;";
 						description="3 Moose Commander";
 						isPlayable=1;
 					};
@@ -9223,7 +9223,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9329,7 +9329,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 3""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M3 = group this;";
 						description="3 Moose Gunner";
 						isPlayable=1;
 					};
@@ -9341,7 +9341,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9447,7 +9447,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[this, ""b_crew""] call JTF2_fnc_SetGear; this setGroupID [""Moose 3""];";
+						init="[this, ""b_crew""] call JTF2_fnc_SetGear; Blue_M3 = group this;";
 						description="3 Moose Driver";
 						isPlayable=1;
 					};
@@ -9459,7 +9459,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9604,7 +9604,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="[this, ""b_pilot""] call JTF2_fnc_SetGear; this setGroupID [""Raptor 1""];";
+						init="[this, ""b_pilot""] call JTF2_fnc_SetGear; Blue_R1 = group this";
 						description="1 Raptor (Pilot)";
 						isPlayable=1;
 					};
@@ -9616,7 +9616,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9723,7 +9723,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="[this, ""b_pilot""] call JTF2_fnc_SetGear; this setGroupID [""Raptor 1""];";
+						init="[this, ""b_pilot""] call JTF2_fnc_SetGear; Blue_R1 = group this;";
 						description="1 Raptor (Co-Pilor)";
 						isPlayable=1;
 					};
@@ -9735,7 +9735,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9880,7 +9880,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="[this, ""b_pilot""] call JTF2_fnc_SetGear; this setGroupID [""Raptor 2""];";
+						init="[this, ""b_pilot""] call JTF2_fnc_SetGear; Blue_R2 = group this;";
 						description="2 Raptor (Pilot)";
 						isPlayable=1;
 					};
@@ -9892,7 +9892,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -9999,7 +9999,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="[this, ""b_pilot""] call JTF2_fnc_SetGear;  this setGroupID [""Raptor 2""];";
+						init="[this, ""b_pilot""] call JTF2_fnc_SetGear;  Blue_R2 = group this;";
 						description="2 Raptor (Co-Pilot)";
 						isPlayable=1;
 					};
@@ -10011,7 +10011,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -11431,7 +11431,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -11821,7 +11821,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -12135,7 +12135,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -12388,7 +12388,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -12583,7 +12583,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -12702,7 +12702,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -12820,7 +12820,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -12954,7 +12954,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -13073,7 +13073,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -13191,7 +13191,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -13325,7 +13325,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -14163,7 +14163,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -14667,7 +14667,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -14805,7 +14805,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -14943,7 +14943,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -15081,7 +15081,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
@@ -15219,7 +15219,7 @@ class Mission
 						class Attribute0
 						{
 							property="ace_isMedic";
-							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
 							class Value
 							{
 								class data
