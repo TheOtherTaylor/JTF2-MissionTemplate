@@ -2,6 +2,9 @@
 // Server Scripts
 if !(isServer) exitWith {};
 
+// Generate frequencies for preset radios
+call JTF2_fnc_radio_genFreqs;
+
 if (("jtf2_param_add_objects_to_zeus" call BIS_fnc_getParamValue) == 1) then{
     // Give zeus control of preplaced and automatically spawned units
     [[zeusModule1, zeusModule2, zeusModule3, zeusModule4, zeusModule5, zeusAdmin], true] execVM "ADV_zeus.sqf";
@@ -18,5 +21,5 @@ else{
     deleteVehicle opfor_respawn;
 };
 
-// Generate frequencies for preset radios
-call JTF2_fnc_radio_genFreqs;
+//====================================================================================================
+JTF2_serverInitFinished = true;

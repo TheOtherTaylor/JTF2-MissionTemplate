@@ -1,16 +1,18 @@
+if (!hasInterface) exitWith {};
+
+// Init once only
 _unit = _this select 0;
 
 if (not local _unit) exitWith { diag_log "_unit is not local. Aborting gear assignment."; };
 if (player != _unit) exitWith { diag_log "_unit is not player. Aborting gear assignment."; };
-_hasGearBeenAssignedAlready = _unit getVariable ["JTF2_Gear_Assigned", false];
+_hasGearBeenAssignedAlready = _unit getVariable ["JTF2_loadoutAssigned",false];
 if (_hasGearBeenAssignedAlready) exitWith { diag_log "Gear already assigned." };
-_unit setVariable ["JTF2_Gear_Assigned", true];
 
 // Get the unit type, overriding if the caller passed in a specific value
-_unitType = _unit getVariable ["JTF2_UnitType", "rifleman"];
-if ((count _this) > 1) then
+_unitType = _unit getVariable ["JTF2_UnitType",nil];
+if (isNil _unitType) then
 {
-	_unitType = _this select 1;
+	_unitType = "b_rifleman";
 };
 
 if (local _unit) then
@@ -32,7 +34,8 @@ if (local _unit) then
 					&& isClass (configFile >> "CfgPatches" >> "ACE_Medical")
 					&& isClass (configFile >> "CfgPatches" >> "task_force_radio"))) then
 			{
-				[] execVM "jtf2\scripts\gear\" + _unitType + ".sqf";
+				 [] execVM"jtf2\scripts\gear\" + _unitType + ".sqf";
+				 missionNamespace setVariable ["JTF2_loadoutAssigned",true];
 			};
 		};
 		case 2: //Remove All Gear
@@ -51,6 +54,7 @@ if (local _unit) then
 			_unit linkItem "ItemCompass";
 			_unit linkItem "ItemRadio";
 			_unit linkItem "ItemWatch";
+			missionNamespace setVariable ["JTF2_loadoutAssigned",true];
 		};
 		default
 		{
@@ -68,6 +72,7 @@ if (local _unit) then
 			_unit linkItem "ItemCompass";
 			_unit linkItem "ItemRadio";
 			_unit linkItem "ItemWatch";
+			missionNamespace setVariable ["JTF2_loadoutAssigned",true];
 		};
 	};
 

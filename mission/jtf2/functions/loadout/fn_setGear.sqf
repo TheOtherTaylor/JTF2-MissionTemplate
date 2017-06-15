@@ -1,6 +1,6 @@
 /*
  * Author: Anton and TheOtherTaylor
- * Sets gear class as variable to player for gear assignment then calls JTF2_fnc_assignGear.
+ * Sets gear class as variable to player for gear assignment
  *
  * Arguments:
  * 0: The player <OBJECT>
@@ -15,4 +15,4 @@
  * Public: Yes
  */
 (_this select 0) setVariable ["JTF2_UnitType", (_this select 1)];
-[(_this select 0)] call JTF2_fnc_assignGear;
+//[(_this select 0)] call JTF2_fnc_assignGear;

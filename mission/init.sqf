@@ -1,13 +1,12 @@
 if (isServer) then {JTF2_fnc_init_server call CBA_fnc_directCall;};
 
-// Setup the pools for reinforcements if CFB_Skins is running.
-[] execVM "Ares_AddCfbReinforcementPools.sqf";
-// TODO enable when this is complete.
-// [] execVM "Ares_addClassRestrictedArsenalModule.sqf";
-// [] execVM "Ares_addRespawnTicketModules.sqf";
+//Init Players
+if (hasInterface) then {
+    // Make sure init isn't called until player is ready
+    [{!isNull player}, {call JTF2_fnc_init_client;}, []] call CBA_fnc_waitUntilAndExecute;
+};
 
 enableSentences false; // Keep the commander units from saying things automatically
-
 
 switch ("jtf2_param_independent_friendly_setting" call BIS_fnc_getParamValue) do{
     case 0: {
@@ -34,11 +33,6 @@ switch ("jtf2_param_independent_friendly_setting" call BIS_fnc_getParamValue) do
         east setFriend [resistance, 0];
         resistance setFriend [east, 0];
     };
-};
-
-switch ("jtf2_param_allow_grass_changes" call BIS_fnc_getParamValue) do{
-	case 0: { tawvd_disableGrassChanges = true; };
-	case 1: { tawvd_disablenone = true; };
 };
 
 if (!isDedicated) then{
@@ -78,8 +72,13 @@ addMissionEventHandler ["HandleDisconnect",
     missionNamespace setVariable [_variableName, 1]; //make sure player spawns in correctly on reconnect
 }];
 
-//Init Players
-if (hasInterface) then {
-    // Make sure init isn't called until player is ready
-    [{!isNull player}, {call jtf2_fnc_init_client;}, []] call CBA_fnc_waitUntilAndExecute;
+// Setup the pools for reinforcements if CFB_Skins is running.
+[] execVM "Ares_AddCfbReinforcementPools.sqf";
+// TODO enable when this is complete.
+// [] execVM "Ares_addClassRestrictedArsenalModule.sqf";
+// [] execVM "Ares_addRespawnTicketModules.sqf";
+
+switch ("jtf2_param_allow_grass_changes" call BIS_fnc_getParamValue) do{
+    case 0: { tawvd_disableGrassChanges = true; };
+    case 1: { tawvd_disablenone = true; };
 };
