@@ -86,15 +86,21 @@ class Params{
     };
     class jtf2_param_ace_use_spectator{
         title = "Allow spectator view on death";
-        values[] = { 0, 1 };
+        values[] = { false, true };
         texts[] = { "No", "Yes" };
-        default = 1;
+        default = true;
     };
     class jtf2_param_ace_medical_level{
         title = "Medical Simulation Level";
         values[] = { 0, 1, 2 };
         texts[] = { "Disabled (Not Recommended)", "Basic", "Advanced" };
         default = 2;
+    };
+    class jtf2_param_advanced_wounds{
+        title = "Advanced Wounds (Leave Off for Basic)";
+        values[] = { 0, 1};
+        texts[] = { "Disabled", "Enabled"};
+        default = 0;
     };
     class jtf2_param_prevent_death{
         title = "Prevent Death on Initial Damage";

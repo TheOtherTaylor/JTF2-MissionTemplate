@@ -15,7 +15,7 @@ respawn = 3;
 respawndelay = 1;
 respawnDialog = 0;
 respawnOnStart = 1;
-respawnTemplates[] = {"MenuPosition"};
+respawnTemplates[] = {"ace_spectator","spectator","MenuPosition"};
 
 //Running into some weird bugs with this where people are stuck with chat open and can't turn it off. - Taylor 07/31
 //disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>},{channelID<number>, disableChat<bool>, disableVoice<bool>},...}; 

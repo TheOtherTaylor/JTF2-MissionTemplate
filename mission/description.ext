@@ -5,7 +5,7 @@ loadScreen = "logo.paa";
 
 #include "description\definitions.hpp"	//Most mission definition and base respawn setup
 #include "description\cfgParams.hpp"	//Mission parameters set in mission setup
-#include "taw_vd\dialog.hpp" //View Distance setup
+#include "taw_vd\dialog.hpp"            //View Distance setup
 
 class CfgFunctions
 {

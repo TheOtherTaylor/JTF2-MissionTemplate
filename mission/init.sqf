@@ -38,39 +38,21 @@ switch ("jtf2_param_independent_friendly_setting" call BIS_fnc_getParamValue) do
 if (!isDedicated) then{
 	// Register the MP event handlers.
 	[] spawn{
-		sleep 1;  waitUntil { sleep 0.1; !isNull player; }; 
-		player addMpEventHandler
-			[
-				"MPRespawn",
-				{
-					[_this select 0] spawn{
-						waitUntil { sleep 0.1; !isNull player; };
-						[_this select 0] call JTF2_fnc_handleRespawn;
-					};
-				}
-			];
-		player addMpEventHandler
-			[
-				"MPKilled",
-				{
-					[_this select 0] spawn{
-						waitUntil { sleep 0.1; !isNull player; };
-						[_this select 0] call JTF2_fnc_handleKilled;
-					};
-				}
-			];
+		waitUntil { sleep 0.5; !isNull player; }; 
+		player addMpEventHandler["MPRespawn", {
+			[_this select 0] spawn{
+				waitUntil { sleep 0.1; !isNull player; };
+				[_this select 0] call JTF2_fnc_handleRespawn;
+			};
+		}];
+		player addMpEventHandler["MPKilled", {
+			[_this select 0] spawn{
+				waitUntil { sleep 0.1; !isNull player; };
+				[_this select 0] call JTF2_fnc_handleKilled;
+			};
+		}];
 	};
 };
-
-//Add Disconnect event handler
-addMissionEventHandler ["HandleDisconnect",
-{
-    _unit = _this select 0;
-    _uid = _this select 2;
-    //deleteVehicle _unit;
-    _variableName = "JTF2_Spectator_Status_" + _uid;
-    missionNamespace setVariable [_variableName, 1]; //make sure player spawns in correctly on reconnect
-}];
 
 // Setup the pools for reinforcements if CFB_Skins is running.
 [] execVM "Ares_AddCfbReinforcementPools.sqf";

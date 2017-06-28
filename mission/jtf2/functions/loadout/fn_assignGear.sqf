@@ -9,24 +9,16 @@ _hasGearBeenAssignedAlready = _unit getVariable ["JTF2_loadoutAssigned",false];
 if (_hasGearBeenAssignedAlready) exitWith { diag_log "Gear already assigned." };
 
 // Get the unit type, overriding if the caller passed in a specific value
-_unitType = _unit getVariable ["JTF2_UnitType",nil];
-if (isNil _unitType) then
-{
-	_unitType = "b_rifleman";
-};
+_unitType = _unit getVariable ["JTF2_UnitType","B_rifleman"];
 
-if (local _unit) then
-{
+if (local _unit) then{
 	_loadoutSetting = "jtf2_param_starting_loadouts" call BIS_fnc_getParamValue;
-	if (_unitType == "spectator") then
-	{
+	if (_unitType == "spectator") then{
 		// If we're assigning spectator gear, that's a special case that should work regardless of mods.
 		_loadoutSetting = 3;
 	};
-	switch (_loadoutSetting) do
-	{
-		case 0: // Role-specific equipment
-		{
+	switch (_loadoutSetting) do{
+		case 0: { // Role-specific equipment
 			// RHS, ACE and CFB_Skins are required for these loadouts. Otherwise
 			// we'll just leave things at the default NATO loadouts.
 			if (_unitType == "spectator" || (
@@ -38,8 +30,7 @@ if (local _unit) then
 				 missionNamespace setVariable ["JTF2_loadoutAssigned",true];
 			};
 		};
-		case 2: //Remove All Gear
-		{
+		case 2: { //Remove All Gear
 			removeUniform _unit;
 			removeAllWeapons _unit;
 			removeBackpack _unit;
@@ -56,8 +47,7 @@ if (local _unit) then
 			_unit linkItem "ItemWatch";
 			missionNamespace setVariable ["JTF2_loadoutAssigned",true];
 		};
-		default
-		{
+		default{
 			// Strip all the equipment except for some basic items
 			removeAllWeapons _unit;
 			removeBackpack _unit;
@@ -75,6 +65,5 @@ if (local _unit) then
 			missionNamespace setVariable ["JTF2_loadoutAssigned",true];
 		};
 	};
-
 	diag_log "Assigned starting gear.";
 };

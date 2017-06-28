@@ -3,9 +3,10 @@
 */
 
 if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then{
-	_medicalLevel  = ("jtf2_param_ace_medical_level" call BIS_fnc_getParamValue); //Default Basic Medical
-	_reviveSetting = ("jtf2_param_revive_setting" call BIS_fnc_getParamValue);	//Default on for basic medical
-	_preventDeath  = ("jtf2_param_prevent_death" call BIS_fnc_getParamValue);			//Default off for basic medical
+	_medicalLevel  = ("jtf2_param_ace_medical_level" call BIS_fnc_getParamValue);	//Default Basic Medical
+	_reviveSetting = ("jtf2_param_revive_setting" call BIS_fnc_getParamValue);		//Default on for basic medical
+	_preventDeath  = ("jtf2_param_prevent_death" call BIS_fnc_getParamValue);		//Default off for basic medical
+	_advancedWounds = ("jtf2_param_advanced_wounds" call BIS_fnc_getParamValue);	//Default off for Mission Settings, Off for Basic
 
 	// Look up defaults and types from https://github.com/acemod/ACE3/blob/master/addons/medical/ACE_Settings.hpp
 	// From 'Medical Settings' module (https://github.com/acemod/ACE3/blob/master/addons/medical/functions/fnc_moduleMedicalSettings.sqf)
@@ -29,16 +30,16 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then{
 	
 	// From 'Advanced Medical Settings' module (https://github.com/acemod/ACE3/blob/master/addons/medical/functions/fnc_moduleAdvancedMedicalSettings.sqf)
 	["ace_medical_enableFor", 0] call ace_common_fnc_setParameter; 						// 0* = Players Only, 1 = Players and AI
-	["ace_medical_enableAdvancedWounds", 0] call ace_common_fnc_setParameter; 			// 0* = Disabled, 1 = Enabled - Re-opening of wounds
+	["ace_medical_enableAdvancedWounds", _advancedWounds] call ace_common_fnc_setParameter; 			// 0* = Disabled, 1 = Enabled - Re-opening of wounds
 	//["ace_medical_enableAirway", X] call ace_common_fnc_setParameter;
 	//["ace_medical_enableFractures", X] call ace_common_fnc_setParameter;
 	["ace_medical_medicSetting_PAK", 1] call ace_common_fnc_setParameter; 				// 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
-	["ace_medical_medicSetting_SurgicalKit", 2] call ace_common_fnc_setParameter; 		// 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
+	["ace_medical_medicSetting_SurgicalKit", 1] call ace_common_fnc_setParameter; 		// 0 = Anyone, 1* = Medics Only, 2 = Doctors Only
 	["ace_medical_consumeItem_PAK", 1] call ace_common_fnc_setParameter; 				// 0*= No, 1 = Yes
 	["ace_medical_consumeItem_SurgicalKit", 0] call ace_common_fnc_setParameter; 		// 0*= No, 1 = Yes
 	["ace_medical_useLocation_PAK", 0] call ace_common_fnc_setParameter; 				// 0 = Anywhere, 1 = Medical Vehicles, 2 = Medical Facility, 3* = Vehicle & Facility, 4 = Disabled
 	["ace_medical_useLocation_SurgicalKit", 0] call ace_common_fnc_setParameter; 		// 0 = Anywhere, 1 = Medical Vehicles, 2* = Medical Facility, 3 = Vehicle & Facility, 4 = Disabled
-	["ace_medical_healHitPointAfterAdvBandage", 0] call ace_common_fnc_setParameter; 	//Bool. Not sure what this does, but defaults to 0
+	["ace_medical_healHitPointAfterAdvBandage", _advancedWounds] call ace_common_fnc_setParameter; 	//Bool. Not sure what this does, but defaults to 0
 	["ace_medical_painIsOnlySuppressed", 1] call ace_common_fnc_setParameter; 			//Bool. Not sure what this does, but defaults to 1
 }else{
 	diag_log "Not setting up medical options for ACE since PBO is not present.";
@@ -77,7 +78,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_finger")) then{
 if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then{
 	["ace_advanced_fatigue_enabled", 1] call ace_common_fnc_setParameter;				// 0 = Disabled, 1*=Enabled
 	["ace_advanced_fatigue_enableStaminaBar", 1] call ace_common_fnc_setParameter;		// 0 = Disabled, 1*=Enabled
-	["ace_advanced_fatigue_performanceFactor", 1.5] call ace_common_fnc_setParameter;		// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
+	["ace_advanced_fatigue_performanceFactor", 1.5] call ace_common_fnc_setParameter;	// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
 	["ace_advanced_fatigue_recoveryFactor", 1.5] call ace_common_fnc_setParameter;		// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
 	["ace_advanced_fatigue_loadFactor", 1] call ace_common_fnc_setParameter;			// 0 - 2, 1*=Default (Can go higher than 2, not recommended)
 	["ace_advanced_fatigue_terrainGradientFactor", 1] call ace_common_fnc_setParameter;	// 0 - 2, 1*=Default (Can go higher than 2, not recommended)

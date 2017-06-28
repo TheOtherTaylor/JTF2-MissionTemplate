@@ -4,14 +4,11 @@ if (not local _killedUnit) exitWith {};
 player setVariable ["JTF2_Gear_Assigned", false];
 
 _allowSpectator = ("jtf2_param_ace_use_spectator" call BIS_fnc_getParamValue);
-if (_allowSpectator > 0) then
-{
-	// Create variable to track alternating spectator/respawn
-	_variableName = "JTF2_Spectator_Status_" + (getPlayerUID player);
-	//If player spectator status does not exist, create player at spectator = false
-    private _var = missionNamespace getVariable _variableName;
-    if (isNil "_var") then
-    {
-        missionNamespace setVariable [_variableName, 0]; 
-    };
+
+//get Spectator Status Variable
+_varA = "JTF2_Spectator_Status_" + (getPlayerUID player);
+_spectatorStatus = missionNamespace getVariable [_varA, true];
+
+if (_allowSpectator && _spectatorStatus) then{
+        missionNamespace setVariable [_varA, false]; 
 };
