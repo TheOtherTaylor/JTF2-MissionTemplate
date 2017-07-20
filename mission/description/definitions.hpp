@@ -12,12 +12,11 @@ disabledAI = 1;         //*0 = JIP slots filled with AI (AI will also take over 
 // ^ discriminate against AI with disabilities
 
 respawn = 3;
-respawndelay = 1;
+respawndelay = 10;
 respawnDialog = 0;
 respawnOnStart = 1;
-respawnTemplates[] = {"ace_spectator","spectator","MenuPosition"};
+respawnTemplates[] = {"MenuPosition"};
 
-//Running into some weird bugs with this where people are stuck with chat open and can't turn it off. - Taylor 07/31
 //disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>},{channelID<number>, disableChat<bool>, disableVoice<bool>},...}; 
 // 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System
 disableChannels[]={{0,false,true},{1,false,true},{2,false,true},{3,false,true},{4,false,true},{5,false,true}};

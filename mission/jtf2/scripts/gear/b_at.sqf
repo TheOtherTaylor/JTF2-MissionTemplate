@@ -99,6 +99,7 @@ switch (_limited) do{
         player unlinkItem "NVGoggles_INDEP";
         player UNlinkItem "ACE_NVG_Wide";
         player unlinkItem "ItemGPS";
+        player unlinkItem "itemRadio";
     };
 };
 

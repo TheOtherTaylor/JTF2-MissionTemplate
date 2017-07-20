@@ -66,6 +66,13 @@ class Params{
                     "EMR-Desert"};
         default = 0;
     };
+    class jtf2_param_indep_uniform_setting{
+        title = "Independent Starting Uniform";
+        values[] = { 0, 1};
+        texts[] = { "Guerilla Woodland",
+                    "Guerilla Desert"};
+        default = 0;
+    };
     class jtf2_param_independent_friendly_setting{
         title = "Independent Allegiance";
         values[] = { 0, 1, 2, 3 };
@@ -86,9 +93,9 @@ class Params{
     };
     class jtf2_param_ace_use_spectator{
         title = "Allow spectator view on death";
-        values[] = { false, true };
+        values[] = { 0, 1 };
         texts[] = { "No", "Yes" };
-        default = true;
+        default = 1;
     };
     class jtf2_param_ace_medical_level{
         title = "Medical Simulation Level";
@@ -100,7 +107,7 @@ class Params{
         title = "Advanced Wounds (Leave Off for Basic)";
         values[] = { 0, 1};
         texts[] = { "Disabled", "Enabled"};
-        default = 0;
+        default = 1;
     };
     class jtf2_param_prevent_death{
         title = "Prevent Death on Initial Damage";

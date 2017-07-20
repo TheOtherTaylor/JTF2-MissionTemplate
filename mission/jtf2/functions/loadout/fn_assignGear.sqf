@@ -15,7 +15,7 @@ if (local _unit) then{
 	_loadoutSetting = "jtf2_param_starting_loadouts" call BIS_fnc_getParamValue;
 	if (_unitType == "spectator") then{
 		// If we're assigning spectator gear, that's a special case that should work regardless of mods.
-		_loadoutSetting = 3;
+		_loadoutSetting = 2;
 	};
 	switch (_loadoutSetting) do{
 		case 0: { // Role-specific equipment

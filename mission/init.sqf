@@ -1,11 +1,5 @@
 if (isServer) then {JTF2_fnc_init_server call CBA_fnc_directCall;};
 
-//Init Players
-if (hasInterface) then {
-    // Make sure init isn't called until player is ready
-    [{!isNull player}, {call JTF2_fnc_init_client;}, []] call CBA_fnc_waitUntilAndExecute;
-};
-
 enableSentences false; // Keep the commander units from saying things automatically
 
 switch ("jtf2_param_independent_friendly_setting" call BIS_fnc_getParamValue) do{
@@ -63,4 +57,10 @@ if (!isDedicated) then{
 switch ("jtf2_param_allow_grass_changes" call BIS_fnc_getParamValue) do{
     case 0: { tawvd_disableGrassChanges = true; };
     case 1: { tawvd_disablenone = true; };
+};
+
+//Init Players
+if (hasInterface) then {
+    // Make sure init isn't called until player is ready
+    [{!isNull player}, {call JTF2_fnc_init_client;}, []] call CBA_fnc_waitUntilAndExecute;
 };

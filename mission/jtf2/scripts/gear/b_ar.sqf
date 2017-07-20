@@ -68,8 +68,6 @@ switch (_uniform) do{
 comment "Add weapons";
 player addItemToVest "rhs_200rnd_556x45_M_SAW"; //Preload Belt
 player addWeapon "rhs_weap_m249_pip_L";
-player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
 
 comment "Add items";
 player addItemToUniform "ACE_EarPlugs";
@@ -90,6 +88,8 @@ switch (_limited) do{
         player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
         player linkItem "tf_anprc152";
         player linkItem "ItemGPS";
+        player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
+        player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
     };
     case 1:{//"Limited Loadouts"
         //Just In Case
@@ -97,7 +97,7 @@ switch (_limited) do{
         player unlinkItem "NVGoggles_OPFOR";
         player unlinkItem "NVGoggles_INDEP";
         player unlinkItem "ItemGPS";
-        player linkItem "ItemRadio";
+        player unlinkItem "itemRadio";
     };
 };
 

@@ -69,8 +69,6 @@ comment "Add weapons";
 player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag"; //Preload Magazine
 player addItemToVest "rhs_mag_M433_HEDP"; //Preload Grenade
 player addWeapon "rhs_weap_m4_m320";
-player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
 player addWeapon "Rangefinder";
  
 comment "Add items";
@@ -86,7 +84,24 @@ for "_i" from 1 to 10 do {player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stan
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player linkItem "tf_anprc152";
-player linkItem "ItemGPS";
+
+_limited = "jtf2_param_limited_loadouts" call BIS_fnc_getParamValue;
+switch (_limited) do{
+    case 0:{ //"Normal Loadouts"
+        player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
+        player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
+        player linkItem "tf_anprc152";
+        player linkItem "ItemGPS";
+    };
+    case 1:{//"Limited Loadouts"
+        //Just In Case
+        player unlinkItem "NVGoggles";
+        player unlinkItem "NVGoggles_OPFOR";
+        player unlinkItem "NVGoggles_INDEP";
+        player unlinkItem "ACE_NVG_Wide";
+        player unlinkItem "ItemGPS";
+        player unlinkItem "ItemRadio";
+    };
+};
 
 [] execVM "jtf2\scripts\gear\aceMedical_Rifleman.sqf";

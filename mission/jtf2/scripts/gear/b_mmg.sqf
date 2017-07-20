@@ -96,7 +96,7 @@ switch (_limited) do{
         player unlinkItem "NVGoggles_INDEP";
         player unlinkItem "ACE_NVG_Wide";
         player unlinkItem "ItemGPS";
-        player linkItem "ItemRadio";
+        player unlinkItem "ItemRadio";
     };
 };
 

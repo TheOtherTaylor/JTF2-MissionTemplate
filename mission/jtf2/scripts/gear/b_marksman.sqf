@@ -85,7 +85,23 @@ for "_i" from 1 to 9 do {player addItemToVest "rhsusf_20Rnd_762x51_m118_special_
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player linkItem "tf_anprc152";
-player linkItem "ItemGPS";
+
+_limited = "jtf2_param_limited_loadouts" call BIS_fnc_getParamValue;
+switch (_limited) do{
+    case 0:{ //"Normal Loadouts"
+        player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
+        player linkItem "tf_anprc152";
+        player linkItem "ItemGPS";
+    };
+    case 1:{//"Limited Loadouts"
+        //Just In Case
+        player unlinkItem "NVGoggles";
+        player unlinkItem "NVGoggles_OPFOR";
+        player unlinkItem "NVGoggles_INDEP";
+        player unlinkItem "ACE_NVG_Wide";
+        player unlinkItem "ItemGPS";
+        player unlinkItem "ItemRadio";
+    };
+};
 
 [] execVM "jtf2\scripts\gear\aceMedical_Rifleman.sqf";
