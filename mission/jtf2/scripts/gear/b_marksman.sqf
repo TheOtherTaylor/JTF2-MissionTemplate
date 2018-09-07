@@ -89,7 +89,6 @@ player linkItem "ItemWatch";
 _limited = "jtf2_param_limited_loadouts" call BIS_fnc_getParamValue;
 switch (_limited) do{
     case 0:{ //"Normal Loadouts"
-        player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
         player linkItem "tf_anprc152";
         player linkItem "ItemGPS";
     };

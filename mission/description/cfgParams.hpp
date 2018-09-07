@@ -37,7 +37,7 @@ class Params{
         default = 0;
     };
     class JTF2_param_enableRadioPreset {
-        title = "Enable Preset Radios (DO NOT ALTER):";
+        title = "Enable Preset Radios (DO NOT ALTER)";
         values[] = {true,false};
         texts[] = {"Enabled","Disabled"};
         default = true;
@@ -75,8 +75,8 @@ class Params{
     };
     class jtf2_param_independent_friendly_setting{
         title = "Independent Allegiance";
-        values[] = { 0, 1, 2, 3 };
-        texts[] = { "Friendly to All", "Friendly to Opfor", "Friendly to Blufor", "Friendly to None" };
+        values[] = { 0, 1, 2, 3};
+        texts[] = { "Friendly to All", "Friendly to Opfor", "Friendly to Blufor", "Friendly to None"};
         default = 3;
     };
     class jtf2_param_ace_options_spacer{

@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-7.2956548,68.349281,-18.724186};
-		dir[]={0.54842275,-0.58906227,0.59356028};
-		up[]={0.39977676,0.80806082,0.43268043};
-		aside[]={0.73450696,6.2864274e-009,-0.67865062};
+		pos[]={-2.8711042,39.277306,6.7252393};
+		dir[]={0.37638715,-0.69258553,0.61541498};
+		up[]={0.36137101,0.72130865,0.59086305};
+		aside[]={0.85312712,-1.1152588e-007,-0.52177083};
 	};
 };
 binarizationWanted=0;
@@ -86,7 +86,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="JTF2 Dynamic Missions (v.3.4.4)";
+		briefingName="JTF2 Dynamic Missions (v.3.4.6)";
 		overviewText="A blank mission template for Zeus missions.";
 		resistanceWest=0;
 		startWeather=0;
