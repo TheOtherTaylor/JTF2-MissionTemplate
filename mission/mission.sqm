@@ -86,7 +86,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="JTF2 Dynamic Missions (v.3.4.6)";
+		briefingName="JTF2 Dynamic Missions (v.3.4.7)";
 		overviewText="A blank mission template for Zeus missions.";
 		resistanceWest=0;
 		startWeather=0;

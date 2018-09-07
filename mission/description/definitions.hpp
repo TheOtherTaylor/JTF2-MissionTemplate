@@ -15,7 +15,7 @@ respawn = 3;
 respawndelay = 10;
 respawnDialog = 0;
 respawnOnStart = 1;
-respawnTemplates[] = {"MenuPosition"};
+respawnTemplates[] = {"MenuPosition","Spectator"};
 
 //disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>},{channelID<number>, disableChat<bool>, disableVoice<bool>},...}; 
 // 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System
