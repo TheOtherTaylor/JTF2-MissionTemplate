@@ -28,7 +28,7 @@ player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag"; //Preload Magazine
 player addItemToVest "rhs_mag_M433_HEDP"; //Preload Grenade
 player addWeapon "rhs_weap_m4_m320";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
+player addPrimaryWeaponItem "rhsusf_acc_su230_mrds";
 
 comment "Add items";
 player addItemToUniform "ACE_EarPlugs";

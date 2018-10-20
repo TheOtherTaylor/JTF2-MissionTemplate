@@ -26,7 +26,7 @@ switch (_uniform) do{
 comment "Add weapons";
 player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag"; //Preload Magazine
 player addWeapon "rhs_weap_m4a1_carryhandle";
-player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
+player addPrimaryWeaponItem "rhsusf_acc_su230_mrds";
 player addWeapon "Rangefinder";
 player addWeapon "ACE_VMH3"; //Mine Sweeper
 

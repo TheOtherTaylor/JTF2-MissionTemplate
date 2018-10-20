@@ -28,7 +28,7 @@ player addItemToVest "rhs_m136_hp_mag"; //Preload Rocket
 player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag"; //Preload Magazine
 player addWeapon "rhs_weap_m16a4_carryhandle_grip_pmag";
 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
+player addPrimaryWeaponItem "rhsusf_acc_su230_mrds";
 player addWeapon "rhs_weap_M136_hp";
 
 comment "Add items";

@@ -92,7 +92,7 @@ switch (_limited) do{
         player linkItem "tf_anprc152";
         player linkItem "ItemGPS";
         player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-        player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
+        player addPrimaryWeaponItem "rhsusf_acc_su230_mrds";
     };
     case 1:{//"Limited Loadouts"
         //Just In Case

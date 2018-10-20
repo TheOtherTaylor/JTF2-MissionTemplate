@@ -85,7 +85,7 @@ player linkItem "B_UavTerminal";
 _limited = "jtf2_param_limited_loadouts" call BIS_fnc_getParamValue;
 switch (_limited) do{
     case 0:{ //"Normal Loadouts"
-        player addPrimaryWeaponItem "rhsusf_acc_SpecterDR";
+        player addPrimaryWeaponItem "rhsusf_acc_su230_mrds";
         player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
         player linkItem "tf_anprc152";
     };
